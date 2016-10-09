@@ -18,7 +18,22 @@ public class DepartmentDirectory {
     public DepartmentDirectory() {
         this.departmentList = new ArrayList<Department>();
     }
+
+    public ArrayList<Department> getDepartmentList() {
+        return departmentList;
+    }
+
+    public void setDepartmentList(ArrayList<Department> departmentList) {
+        this.departmentList = departmentList;
+    }
     
+    
+    public Department addDepartment()
+    {
+        Department department = new Department();
+        departmentList.add(department);
+        return department;
+    }
     
     
 }

@@ -5,6 +5,7 @@
  */
 package business.Student;
 
+import business.college.Transcript;
 import business.userdata.Person;
 
 /**
@@ -17,8 +18,15 @@ public class Student {
     private String emailAddress;
     private String isGraduated;
     private Person studentData;
-    //private StudentAccount studentAccount;
-    //private Transcript transcript;
+    private StudentAccount studentAccount;
+    private Transcript transcript;
+    
+    public Student ()
+    {
+        this.studentData = new Person();
+        this.studentAccount = new StudentAccount();
+        this.transcript = new Transcript();
+    }
 
     public String getStudentId() {
         return studentId;
@@ -43,14 +51,5 @@ public class Student {
     public void setIsGraduated(String isGraduated) {
         this.isGraduated = isGraduated;
     }
-
-    public Person getStudentData() {
-        return studentData;
-    }
-
-    public void setStudentData(Person studentData) {
-        this.studentData = studentData;
-    }
-    
-    
+      
 }

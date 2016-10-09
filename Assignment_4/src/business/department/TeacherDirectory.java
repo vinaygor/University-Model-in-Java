@@ -27,4 +27,11 @@ public class TeacherDirectory {
         this.teacherDirectory = teacherDirectory;
     }
     
-}
+    public Teacher addTeacher()
+    {
+        Teacher teacher = new Teacher();
+        teacherDirectory.add(teacher);
+        return teacher;
+    }
+            
+    }

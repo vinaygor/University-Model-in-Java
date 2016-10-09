@@ -18,4 +18,20 @@ public class UniversityDirectory {
     public UniversityDirectory() {
         this.universityList = new ArrayList<University>();
     }
+
+    public ArrayList<University> getUniversityList() {
+        return universityList;
+    }
+
+    public void setUniversityList(ArrayList<University> universityList) {
+        this.universityList = universityList;
+    }
+    
+    public University addUniversity()
+    {
+        University university = new University();
+        universityList.add(university);
+        return university;
+        
+    }
 }

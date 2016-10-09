@@ -18,7 +18,23 @@ public class CollegeDirectory {
     public CollegeDirectory() {
         this.collegeList = new ArrayList<College>();
     }
+
+    public ArrayList<College> getCollegeList() {
+        return collegeList;
+    }
+
+    public void setCollegeList(ArrayList<College> collegeList) {
+        this.collegeList = collegeList;
+    }
     
+    
+    public College addCollege()
+    {
+        College college = new College();
+        collegeList.add(college);
+        return college;
+        
+    }
     
     
 }

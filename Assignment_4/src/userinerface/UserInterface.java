@@ -5,6 +5,7 @@
  */
 package userinerface;
 
+import business.InitializeCity;
 import business.Student.InitializeStudent;
 import business.university.InitializeUniversity;
 
@@ -16,7 +17,7 @@ public class UserInterface {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        InitializeUniversity.initializeUniversity();
+        InitializeCity.initializeCity();
         
     }
     

@@ -46,15 +46,14 @@ public class UniversityStudentDirectory {
     
     public ArrayList<Student> addUniversityStudent(College college)
     {
-        ArrayList<Student> student = new ArrayList<>();
         for(College c : collegeDirectory.getCollegeList())
             {
                 for(Student s:c.getCollegeStudentDirectory().getStudentListCollege())
-                student.add(s);
+                studentList.add(s);
                 
             } 
         
-        return student;
+        return studentList;
         
     }
     

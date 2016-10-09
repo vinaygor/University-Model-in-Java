@@ -42,14 +42,12 @@ public class CollegeStudentDirectory {
     
      public ArrayList<Student> addCollegeStudent(Department department)
     {
-        ArrayList<Student> student = new ArrayList<>();
-        for(Department d : departmentDirectory.getDepartmentList())
-            {
-                for(Student s:d.getDepartmentStudentDirectory().getstudentListDept())
-                student.add(s);
+      
+                for(Student s:department.getDepartmentStudentDirectory().getstudentListDept())
+                studentListCollege.add(s);
                 
-            }
-        return student;
+      
+        return studentListCollege;
         
     }
     

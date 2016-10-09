@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class InitializeStudent {
     
-    public static ArrayList<Student> intializeStudentDetails()
+    public ArrayList<Student> intializeStudentDetails()
     {
         //UniversityStudentDirectory universityStudentDirectory = new UniversityStudentDirectory();
         

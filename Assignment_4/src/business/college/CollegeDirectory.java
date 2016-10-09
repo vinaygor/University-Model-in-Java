@@ -28,11 +28,11 @@ public class CollegeDirectory {
     }
     
     
-    public College addCollege()
+    public College addCollege(College c)
     {
-        College college = new College();
-        collegeList.add(college);
-        return college;
+        
+        collegeList.add(c);
+        return c;
         
     }
     

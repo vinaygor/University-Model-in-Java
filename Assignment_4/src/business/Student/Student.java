@@ -24,8 +24,8 @@ public class Student {
     public Student ()
     {
         this.studentData = new Person();
-        this.studentAccount = new StudentAccount();
-        this.transcript = new Transcript();
+       // this.studentAccount = new StudentAccount();
+       // this.transcript = new Transcript();
     }
 
     public String getStudentId() {
@@ -51,5 +51,30 @@ public class Student {
     public void setIsGraduated(String isGraduated) {
         this.isGraduated = isGraduated;
     }
+
+    public Person getStudentData() {
+        return studentData;
+    }
+
+    public void setStudentData(Person studentData) {
+        this.studentData = studentData;
+    }
+
+    public StudentAccount getStudentAccount() {
+        return studentAccount;
+    }
+
+    public void setStudentAccount(StudentAccount studentAccount) {
+        this.studentAccount = studentAccount;
+    }
+
+    public Transcript getTranscript() {
+        return transcript;
+    }
+
+    public void setTranscript(Transcript transcript) {
+        this.transcript = transcript;
+    }
+    
       
 }

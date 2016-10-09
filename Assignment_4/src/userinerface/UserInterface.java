@@ -5,6 +5,9 @@
  */
 package userinerface;
 
+import business.Student.InitializeStudent;
+import business.university.InitializeUniversity;
+
 /**
  *
  * @author ayush
@@ -13,7 +16,7 @@ public class UserInterface {
     
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        InitializeUniversity.initializeUniversity();
         
     }
     

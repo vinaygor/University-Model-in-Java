@@ -14,9 +14,11 @@ import java.util.ArrayList;
 public class DepartmentDirectory {
     
     private ArrayList<Department> departmentList;
+    DepartmentDirectory departmentDirectory;
 
-    public DepartmentDirectory() {
+    public DepartmentDirectory(DepartmentDirectory departmentDirectory) {
         this.departmentList = new ArrayList<Department>();
+        this.departmentDirectory = departmentDirectory;
     }
 
     public ArrayList<Department> getDepartmentList() {
@@ -28,11 +30,10 @@ public class DepartmentDirectory {
     }
     
     
-    public Department addDepartment()
+    public Department addDepartment(Department d)
     {
-        Department department = new Department();
-        departmentList.add(department);
-        return department;
+        departmentList.add(d);
+        return d;
     }
     
     

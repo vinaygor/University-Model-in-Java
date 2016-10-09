@@ -20,10 +20,10 @@ public class Department {
     private JobPosition jobPosition;
 
     public Department() {
-        this.degree = new Degree();
-        this.departmentCourseCatalog = new DepartmentCourseCatalog();
-        this.departmentCourseSchedule = new DepartmentCourseSchedule();
-        this.jobPosition = new JobPosition();
+      //  this.degree = new Degree();
+      //  this.departmentCourseCatalog = new DepartmentCourseCatalog();
+      //  this.departmentCourseSchedule = new DepartmentCourseSchedule();
+      //  this.jobPosition = new JobPosition();
         this.departmentStudentDirectory = new DepartmentStudentDirectory();
     }
     
@@ -43,6 +43,38 @@ public class Department {
 
     public void setDepartmentId(String departmentId) {
         this.departmentId = departmentId;
+    }
+
+    public Degree getDegree() {
+        return degree;
+    }
+
+    public void setDegree(Degree degree) {
+        this.degree = degree;
+    }
+
+    public DepartmentCourseCatalog getDepartmentCourseCatalog() {
+        return departmentCourseCatalog;
+    }
+
+    public void setDepartmentCourseCatalog(DepartmentCourseCatalog departmentCourseCatalog) {
+        this.departmentCourseCatalog = departmentCourseCatalog;
+    }
+
+    public DepartmentStudentDirectory getDepartmentStudentDirectory() {
+        return departmentStudentDirectory;
+    }
+
+    public void setDepartmentStudentDirectory(DepartmentStudentDirectory departmentStudentDirectory) {
+        this.departmentStudentDirectory = departmentStudentDirectory;
+    }
+
+    public JobPosition getJobPosition() {
+        return jobPosition;
+    }
+
+    public void setJobPosition(JobPosition jobPosition) {
+        this.jobPosition = jobPosition;
     }
     
     

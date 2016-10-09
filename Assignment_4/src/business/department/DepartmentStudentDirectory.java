@@ -6,6 +6,8 @@
 package business.department;
 
 import business.Student.Student;
+import business.college.CollegeStudentDirectory;
+import business.university.UniversityStudentDirectory;
 import java.util.ArrayList;
 
 /**
@@ -26,4 +28,12 @@ public class DepartmentStudentDirectory {
     public void setstudentListDept(ArrayList<Student> studentListDept) {
         this.studentListDept = studentListDept;
     }
+    
+    public Student addDepartmentStudent(Student student)
+    {
+       studentListDept.add(student);
+       return student;
+       
+    }
+    
 }

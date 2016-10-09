@@ -22,8 +22,8 @@ public class College {
 
     public College() {
         this.collegeAddress = new Address();
-        this.departmentDirectory = new DepartmentDirectory();
-        this.collegeStudentDirectory = new CollegeStudentDirectory();
+        this.departmentDirectory = new DepartmentDirectory(departmentDirectory);
+        this.collegeStudentDirectory = new CollegeStudentDirectory(departmentDirectory);
     }
     
     public String getCollegeName() {
@@ -40,6 +40,30 @@ public class College {
 
     public void setCollegeId(String collegeId) {
         this.collegeId = collegeId;
+    }
+
+    public Address getCollegeAddress() {
+        return collegeAddress;
+    }
+
+    public void setCollegeAddress(Address collegeAddress) {
+        this.collegeAddress = collegeAddress;
+    }
+
+    public DepartmentDirectory getDepartmentDirectory() {
+        return departmentDirectory;
+    }
+
+    public void setDepartmentDirectory(DepartmentDirectory departmentDirectory) {
+        this.departmentDirectory = departmentDirectory;
+    }
+
+    public CollegeStudentDirectory getCollegeStudentDirectory() {
+        return collegeStudentDirectory;
+    }
+
+    public void setCollegeStudentDirectory(CollegeStudentDirectory collegeStudentDirectory) {
+        this.collegeStudentDirectory = collegeStudentDirectory;
     }
     
     

@@ -20,5 +20,17 @@ public class DepartmentCourseCatalog {
     {
         this.courseCatalog = new ArrayList<Course>();
     }
+
+    public ArrayList<Course> getCourseCatalog() {
+        return courseCatalog;
+    }
+
+    public void setCourseCatalog(ArrayList<Course> courseCatalog) {
+        this.courseCatalog = courseCatalog;
+    }
         
+    public Course addCourse(Course c){
+        courseCatalog.add(c);
+        return c;
+    }
 }

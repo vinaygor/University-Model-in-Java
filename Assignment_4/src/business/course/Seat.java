@@ -11,17 +11,18 @@ package business.course;
  */
 public class Seat {
     
-    private String totalString;
+    private String totalSeat;
     private String availableNoOfSeats;
     private String unAvailableNoOfSeats;
 
-    public String getTotalString() {
-        return totalString;
+    public String getTotalSeat() {
+        return totalSeat;
     }
 
-    public void setTotalString(String totalString) {
-        this.totalString = totalString;
+    public void setTotalSeat(String totalSeat) {
+        this.totalSeat = totalSeat;
     }
+
 
     public String getAvailableNoOfSeats() {
         return availableNoOfSeats;

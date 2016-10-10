@@ -21,7 +21,7 @@ public class Department {
 
     public Department() {
       //  this.degree = new Degree();
-      //  this.departmentCourseCatalog = new DepartmentCourseCatalog();
+        this.departmentCourseCatalog = new DepartmentCourseCatalog();
       //  this.departmentCourseSchedule = new DepartmentCourseSchedule();
       //  this.jobPosition = new JobPosition();
         this.departmentStudentDirectory = new DepartmentStudentDirectory();

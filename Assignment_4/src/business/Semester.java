@@ -30,6 +30,30 @@ public class Semester {
     public void setCalenderYear(CalenderYear calenderYear) {
         this.calenderYear = calenderYear;
     }
+
+    public String getSemesterName() {
+        return semesterName;
+    }
+
+    public void setSemesterName(String semesterName) {
+        this.semesterName = semesterName;
+    }
+
+    public DateInfo getDateInfo() {
+        return dateInfo;
+    }
+
+    public void setDateInfo(DateInfo dateInfo) {
+        this.dateInfo = dateInfo;
+    }
+
+    public CourseOffering getCourseOffering() {
+        return courseOffering;
+    }
+
+    public void setCourseOffering(CourseOffering courseOffering) {
+        this.courseOffering = courseOffering;
+    }
     
     
     

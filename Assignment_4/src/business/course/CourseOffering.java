@@ -19,23 +19,25 @@ import java.util.ArrayList;
 public class CourseOffering {
     private Semester semester;
     private DepartmentCourseCatalog courseList;
-    private TeacherDirectory teacherDirectory;
+    private Teacher teacher;
     private ClassRoom classRoom;
+    private Seat seat;
 
     public CourseOffering() {
-        this.semester = new Semester();
+      //  this.semester = new Semester();
         this.courseList = new DepartmentCourseCatalog();
-        this.teacherDirectory = new TeacherDirectory();
+        this.teacher = new Teacher();
         this.classRoom = new ClassRoom();
+        this.seat = new Seat();
     }
 
-    public Semester getSemester() {
-        return semester;
-    }
-
-    public void setSemester(Semester semester) {
-        this.semester = semester;
-    }
+//    public Semester getSemester() {
+//        return semester;
+//    }
+//
+//    public void setSemester(Semester semester) {
+//        this.semester = semester;
+//    }
 
     public DepartmentCourseCatalog getCourseList() {
         return courseList;
@@ -45,12 +47,12 @@ public class CourseOffering {
         this.courseList = courseList;
     }
 
-    public TeacherDirectory getTeacherDirectory() {
-        return teacherDirectory;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setTeacherDirectory(TeacherDirectory teacherDirectory) {
-        this.teacherDirectory = teacherDirectory;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public ClassRoom getClassRoom() {
@@ -60,6 +62,18 @@ public class CourseOffering {
     public void setClassRoom(ClassRoom classRoom) {
         this.classRoom = classRoom;
     }
+
+    public Seat getSeat() {
+        return seat;
+    }
+
+    public void setSeat(Seat seat) {
+        this.seat = seat;
+    }
+    
+    
+    
+    
     
     
 }

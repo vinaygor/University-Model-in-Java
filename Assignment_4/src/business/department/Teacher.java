@@ -38,6 +38,22 @@ public class Teacher {
     public void setEducationQualification(String educationQualification) {
         this.educationQualification = educationQualification;
     }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public JobPosition getJobPosition() {
+        return jobPosition;
+    }
+
+    public void setJobPosition(JobPosition jobPosition) {
+        this.jobPosition = jobPosition;
+    }
     
     
 }

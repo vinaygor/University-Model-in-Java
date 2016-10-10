@@ -20,4 +20,22 @@ public class DepartmentCourseSchedule {
         this.courseOffering = new CourseOffering();
         this.semester = new Semester();
     }
+
+    public CourseOffering getCourseOffering() {
+        return courseOffering;
+    }
+
+    public void setCourseOffering(CourseOffering courseOffering) {
+        this.courseOffering = courseOffering;
+    }
+
+    public Semester getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semester semester) {
+        this.semester = semester;
+    }
+    
+    
 }

@@ -8,6 +8,7 @@ package business.department;
 import business.Student.InitializeStudent;
 import business.Student.Student;
 import business.course.Course;
+import business.course.CourseOffering;
 import business.course.InitializeCourse;
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 public class InitializeDepartment {
     private InitializeStudent initializeStudent;
     private InitializeCourse initializeCourse;
+   
     public InitializeDepartment(){
         initializeStudent = new InitializeStudent();
         initializeCourse = new InitializeCourse();
@@ -42,8 +44,14 @@ public class InitializeDepartment {
         {   Course course1 = deptCourseCatalog1.get(i);
             d1.getDepartmentCourseCatalog().addCourse(course1);
         }
+        
+        TeacherDirectory teacherDirectory = initializeTeacher(1);
+        //initializeCourse.getDepartmentCourseCatalog(d1.getDepartmentCourseCatalog());
+        initializeCourse.getTeacherCatalog(teacherDirectory);
+        ArrayList<CourseOffering> courseOffering1 =initializeCourse.initializeCourseOffering(d1);
+        DepartmentCourseSchedule dcs1=initializeDepartCourseSchedule(courseOffering1);
+        d1.setDepartmentCourseSchedule(dcs1);
         department.add(d1);
-        initializeCourse.getDepartmentCourseCatalog(d1.getDepartmentCourseCatalog());
         
         Department d2 = new Department();
         d2.setDepartmentName("EM");
@@ -58,8 +66,14 @@ public class InitializeDepartment {
         {   Course course2 = deptCourseCatalog2.get(i);
             d2.getDepartmentCourseCatalog().addCourse(course2);
         }
+        
+        TeacherDirectory teacherDirectory2 = initializeTeacher(2);
+        //initializeCourse.getDepartmentCourseCatalog(d2.getDepartmentCourseCatalog());
+        initializeCourse.getTeacherCatalog(teacherDirectory2);
+        ArrayList<CourseOffering> courseOffering2 =initializeCourse.initializeCourseOffering(d2);
+        DepartmentCourseSchedule dcs2=initializeDepartCourseSchedule(courseOffering2);
+        d2.setDepartmentCourseSchedule(dcs2);
         department.add(d2);
-        initializeCourse.getDepartmentCourseCatalog(d2.getDepartmentCourseCatalog());
         
         return department;
         
@@ -78,8 +92,14 @@ public class InitializeDepartment {
         {   Course course2 = deptCourseCatalog3.get(i);
             d3.getDepartmentCourseCatalog().addCourse(course2);
         }
+        
+        TeacherDirectory teacherDirectory3 = initializeTeacher(1);
+        //initializeCourse.getDepartmentCourseCatalog(d3.getDepartmentCourseCatalog());
+        initializeCourse.getTeacherCatalog(teacherDirectory3);
+        ArrayList<CourseOffering> courseOffering3 =initializeCourse.initializeCourseOffering(d3);
+        DepartmentCourseSchedule dcs3=initializeDepartCourseSchedule(courseOffering3);
+        d3.setDepartmentCourseSchedule(dcs3);
         department2.add(d3);
-        initializeCourse.getDepartmentCourseCatalog(d3.getDepartmentCourseCatalog());
         
         Department d4 = new Department();
         d4.setDepartmentName("EM");
@@ -94,8 +114,16 @@ public class InitializeDepartment {
         {   Course course2 = deptCourseCatalog4.get(i);
             d4.getDepartmentCourseCatalog().addCourse(course2);
         }
+        
+        
+        TeacherDirectory teacherDirectory4 = initializeTeacher(2);
+        //initializeCourse.getDepartmentCourseCatalog(d4.getDepartmentCourseCatalog());
+        initializeCourse.getTeacherCatalog(teacherDirectory4);
+        ArrayList<CourseOffering> courseOffering4 =initializeCourse.initializeCourseOffering(d4);
+        DepartmentCourseSchedule dcs4=initializeDepartCourseSchedule(courseOffering4);
+        d4.setDepartmentCourseSchedule(dcs4);
         department2.add(d4);
-        initializeCourse.getDepartmentCourseCatalog(d4.getDepartmentCourseCatalog());
+        
         
         Department d5 = new Department();
         d5.setDepartmentName("TSM");
@@ -110,8 +138,14 @@ public class InitializeDepartment {
         {   Course course2 = deptCourseCatalog5.get(i);
             d5.getDepartmentCourseCatalog().addCourse(course2);
         }
+        
+        TeacherDirectory teacherDirectory5 = initializeTeacher(1);
+       // initializeCourse.getDepartmentCourseCatalog(d5.getDepartmentCourseCatalog());
+        initializeCourse.getTeacherCatalog(teacherDirectory5);
+        ArrayList<CourseOffering> courseOffering5 =initializeCourse.initializeCourseOffering(d5);
+        DepartmentCourseSchedule dcs5=initializeDepartCourseSchedule(courseOffering5);
+        d5.setDepartmentCourseSchedule(dcs5);
         department2.add(d5);
-        initializeCourse.getDepartmentCourseCatalog(d5.getDepartmentCourseCatalog());
         
         return department2;
     
@@ -121,5 +155,108 @@ public class InitializeDepartment {
         
      }
     
+    public  TeacherDirectory initializeTeacher(int deptId)
+    {
+        switch(deptId)
+        {
+            
+        case 1:
+        {
+        TeacherDirectory teacherDirectory = new TeacherDirectory();
+        Teacher teacher = new Teacher();
+        teacher.getJobPosition().setJobId("1");
+        teacher.getJobPosition().setJobRole("Faculty");
+        teacher.getPerson().setFirstName("Kal");
+        teacher.getPerson().setLastName("Bugrara");
+        teacher.getPerson().setPersonID("001");
+        teacher.getPerson().setGender("Male");
+        teacher.getPerson().setDateOfBirth("01/01/1975");
+        teacher.getPerson().getAddress().setCity("Boston");
+        teacher.getPerson().getAddress().setStreet1("Longwood");
+        teacher.getPerson().getAddress().setStreet2("Clearway");
+        teacher.getPerson().getAddress().setState("MA");
+        teacher.getPerson().getAddress().setPinNumber("32132");
+        teacher.setEducationQualification("Phd");
+        teacher.setExperience("20");
+        teacherDirectory.addTeacher(teacher);
         
+        Teacher teacher1 = new Teacher();
+        teacher1.getJobPosition().setJobId("2");
+        teacher1.getJobPosition().setJobRole("Faculty");
+        teacher1.getPerson().setFirstName("Yusuf");
+        teacher1.getPerson().setLastName("Ozbek");
+        teacher1.getPerson().setPersonID("002");
+        teacher1.getPerson().setGender("Male");
+        teacher1.getPerson().setDateOfBirth("01/01/1980");
+        teacher1.getPerson().getAddress().setCity("Boston");
+        teacher1.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher1.getPerson().getAddress().setStreet2("Clearway");
+        teacher1.getPerson().getAddress().setState("MA");
+        teacher1.getPerson().getAddress().setPinNumber("32132");
+        teacher1.setEducationQualification("Phd");
+        teacher1.setExperience("20");
+        teacherDirectory.addTeacher(teacher1);
+        
+        return teacherDirectory;
+        
+        }
+        case 2:
+        {
+        TeacherDirectory teacherDirectory1 = new TeacherDirectory();
+        Teacher teacher2 = new Teacher();
+        teacher2.getJobPosition().setJobId("1");
+        teacher2.getJobPosition().setJobRole("Faculty");
+        teacher2.getPerson().setFirstName("Steve");
+        teacher2.getPerson().setLastName("Klosterman");
+        teacher2.getPerson().setPersonID("003");
+        teacher2.getPerson().setGender("Male");
+        teacher2.getPerson().setDateOfBirth("01/01/1975");
+        teacher2.getPerson().getAddress().setCity("Boston");
+        teacher2.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher2.getPerson().getAddress().setStreet2("Clearway");
+        teacher2.getPerson().getAddress().setState("MA");
+        teacher2.getPerson().getAddress().setPinNumber("32132");
+        teacher2.setEducationQualification("Phd");
+        teacher2.setExperience("20");
+        teacherDirectory1.addTeacher(teacher2);
+        
+        Teacher teacher3 = new Teacher();
+        teacher3.getJobPosition().setJobId("2");
+        teacher3.getJobPosition().setJobRole("Faculty");
+        teacher3.getPerson().setFirstName("Ben");
+        teacher3.getPerson().setLastName("Haris");
+        teacher3.getPerson().setPersonID("004");
+        teacher3.getPerson().setGender("Male");
+        teacher3.getPerson().setDateOfBirth("01/01/1975");
+        teacher3.getPerson().getAddress().setCity("Boston");
+        teacher3.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher3.getPerson().getAddress().setStreet2("Mass Ave");
+        teacher3.getPerson().getAddress().setState("MA");
+        teacher3.getPerson().getAddress().setPinNumber("32132");
+        teacher3.setEducationQualification("Phd");
+        teacher3.setExperience("20");
+        teacherDirectory1.addTeacher(teacher3);
+        return teacherDirectory1;
+        }
+        }
+        return null;
+        
+        
+    }
+    
+    public DepartmentCourseSchedule initializeDepartCourseSchedule(ArrayList<CourseOffering> courseOffering)
+    {
+        DepartmentCourseSchedule dcs = new DepartmentCourseSchedule();
+        for(int i=0; i<courseOffering.size();i++)
+        {
+            
+            dcs.setCourseOffering(courseOffering.get(i));
+            dcs.setSemester(courseOffering.get(i).getSemester());
+            
+        }
+        return dcs;
+        
+        
+        
+    }
 }

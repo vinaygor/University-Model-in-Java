@@ -12,7 +12,7 @@ package business.college;
 public class ClassRoom {
     
     private String roomNo;
-    private String buildingName;
+    private String buildingNo;
 
     public String getRoomNo() {
         return roomNo;
@@ -22,12 +22,12 @@ public class ClassRoom {
         this.roomNo = roomNo;
     }
 
-    public String getBuildingName() {
-        return buildingName;
+    public String getBuildingNo() {
+        return buildingNo;
     }
 
-    public void setBuildingName(String buildingName) {
-        this.buildingName = buildingName;
+    public void setBuildingNo(String buildingNo) {
+        this.buildingNo = buildingNo;
     }
     
     

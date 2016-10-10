@@ -5,9 +5,9 @@
  */
 package business;
 
-import business.Student.Student;
 import business.college.College;
-import business.college.CollegeDirectory;
+import business.course.Course;
+import business.department.Department;
 import business.university.InitializeUniversity;
 import business.university.University;
 import java.util.ArrayList;
@@ -27,14 +27,26 @@ public class InitializeCity {
         ArrayList<University> u = initializeUniversity.initializeUniversity();
         for(int i =0;i<u.size();i++){
            University u1 = u.get(i);
-        for(Student s: u1.getUniversityStudentDirectory().getStudentList())
+        for(College c1: u1.getCollegeDirectory().getCollegeList())
         {
             
-            System.out.println("Student Id: "+s.getStudentId());
+            for(Department d :c1.getDepartmentDirectory().getDepartmentList())
+            {
+                System.out.println("Department Name :"+d.getDepartmentName());
+                System.out.println("Semester Details :"+d.getDepartmentCourseSchedule().getSemester().getSemesterName()+" "+d.getDepartmentCourseSchedule().getCourseOffering().getSemester().getCalenderYear().getYear());
+                
+                for(int q = 0; q<d.getDepartmentCourseSchedule().getSemester().getCourseOffering().getCourseList().getCourseCatalog().size();q++){
+                  Course course = d.getDepartmentCourseSchedule().getSemester().getCourseOffering().getCourseList().getCourseCatalog().get(q);
+                    System.out.println("Course Details :"+course.getCourseName() + " "+course.getCourseType());
+                }
+//                for(Course c2 : d.getDepartmentCourseCatalog().getCourseCatalog())
+//                System.out.println(" University Name "+u1.getUniversityName()+" College Name "+c1.getCollegeName()+" Department Name "+d.getDepartmentName() +"|| Course Name "+c2.getCourseName());
+//        
+            }
         }
-            System.out.println("University 1 Student Count:"+u1.getUniversityStudentDirectory().getStudentList().size());
-            System.out.println(" "+u1.getCollegeDirectory().getCollegeList().size());
-            ArrayList<College> college=u1.getCollegeDirectory().getCollegeList();
+//            System.out.println("University 1 Student Count:"+u1.getUniversityStudentDirectory().getStudentList().size());
+//            System.out.println(" "+u1.getCollegeDirectory().getCollegeList().size());
+//            ArrayList<College> college=u1.getCollegeDirectory().getCollegeList();
             
         }
     }

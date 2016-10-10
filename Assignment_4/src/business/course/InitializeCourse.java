@@ -7,7 +7,11 @@ package business.course;
 
 import business.InitializeSemester;
 import business.Semester;
+import business.college.ClassRoom;
+import business.department.Department;
 import business.department.DepartmentCourseCatalog;
+import business.department.TeacherDirectory;
+import static java.lang.String.valueOf;
 import java.util.ArrayList;
 
 /**
@@ -15,10 +19,15 @@ import java.util.ArrayList;
  * @author vinay
  */
 public class InitializeCourse {
+    private ArrayList<TeacherDirectory> td;
     private InitializeSemester initializeSemester;
     private ArrayList<DepartmentCourseCatalog> departmentCourseCatalog;
+    private static int roomNo=1;
+    private static int buildingNo=100;
     public InitializeCourse(){
         initializeSemester = new InitializeSemester();
+        departmentCourseCatalog= new ArrayList<DepartmentCourseCatalog>();
+        td = new ArrayList<TeacherDirectory>();
     }
     public ArrayList<Course> initializeCourse(int number){
         
@@ -101,13 +110,85 @@ public class InitializeCourse {
         return null;
     }
 
-    public void initializeCourseOffering(){
+    public ArrayList<CourseOffering> initializeCourseOffering(Department d){
         ArrayList<CourseOffering> courseOffering = new ArrayList<CourseOffering>();
         ArrayList<Semester> semesterList = initializeSemester.initializeSemester();
-        semesterList.get(1).getSemesterName();
+       for (int k=0;k<d.getDepartmentCourseCatalog().getCourseCatalog().size();k++)
+      {
+        for(int i=0; i<semesterList.size();i++)
+        {
+            Semester s = semesterList.get(i);
+            CourseOffering courseOffering1 = new CourseOffering();
+           // courseOffering1.setSemester(s);
+           
+            ArrayList<Course> tempDept=d.getDepartmentCourseCatalog().getCourseCatalog();
+            if(s.getSemesterName().equals("Fall"))
+            for(int j=0;j<2;j++)
+            { 
+                Course c = tempDept.get(j);
+                courseOffering1.getCourseList().addCourse(c);
+                ClassRoom classRoom=initializeClassRoom();
+                courseOffering1.setClassRoom(classRoom);
+                courseOffering1.setTeacher(td.get(k).getTeacherDirectory().get(j));
+                courseOffering1.getSeat().setTotalSeat("50");
+                courseOffering1.getSeat().setAvailableNoOfSeats("50");
+                courseOffering1.getSeat().setUnAvailableNoOfSeats("0");
+                courseOffering.add(courseOffering1);
+               
+            }
+            else if(s.getSemesterName().equals("Spring"))
+            for(int j=2;j<4;j++)
+            { 
+                 Course c= tempDept.get(j);
+                 int a=0;
+                courseOffering1.getCourseList().addCourse(c);
+                ClassRoom classRoom=initializeClassRoom();
+                courseOffering1.setClassRoom(classRoom);
+                courseOffering1.setTeacher(td.get(k).getTeacherDirectory().get(a++));
+                courseOffering1.getSeat().setTotalSeat("50");
+                courseOffering1.getSeat().setAvailableNoOfSeats("50");
+                courseOffering1.getSeat().setUnAvailableNoOfSeats("0");
+                courseOffering.add(courseOffering1);
+                
+            }
+            else
+                for(int j=0;j<2;j++)
+            { 
+                 Course c= tempDept.get(j);
+                courseOffering1.getCourseList().addCourse(c);
+                ClassRoom classRoom=initializeClassRoom();
+                courseOffering1.setClassRoom(classRoom);
+                courseOffering1.setTeacher(td.get(k).getTeacherDirectory().get(j));
+                courseOffering1.getSeat().setTotalSeat("50");
+                courseOffering1.getSeat().setAvailableNoOfSeats("50");
+                courseOffering1.getSeat().setUnAvailableNoOfSeats("0");
+                courseOffering.add(courseOffering1);
+            }
+                
+        }
+      }
+       return courseOffering;
+        //semesterList.get(1).getSemesterName();
+        
     }
     
-    public void getDepartmentCourseCatalog(DepartmentCourseCatalog d){
-        departmentCourseCatalog.add(d);
+    public void getTeacherCatalog(TeacherDirectory td){
+        this.td.add(td);
+    }
+    
+//    public void getDepartmentCourseCatalog(DepartmentCourseCatalog d){
+//        departmentCourseCatalog.add(d);
+//    }
+    
+    public ClassRoom initializeClassRoom()
+    {
+        ClassRoom classRoom = new ClassRoom();
+        classRoom.setRoomNo(valueOf(roomNo));
+        classRoom.setBuildingNo(valueOf(buildingNo));
+        roomNo++;
+        buildingNo++;
+        
+        return classRoom; 
+        
     }
 }

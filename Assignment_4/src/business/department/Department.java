@@ -22,7 +22,7 @@ public class Department {
     public Department() {
       //  this.degree = new Degree();
         this.departmentCourseCatalog = new DepartmentCourseCatalog();
-      //  this.departmentCourseSchedule = new DepartmentCourseSchedule();
+       this.departmentCourseSchedule = new DepartmentCourseSchedule();
       //  this.jobPosition = new JobPosition();
         this.departmentStudentDirectory = new DepartmentStudentDirectory();
     }
@@ -76,6 +76,15 @@ public class Department {
     public void setJobPosition(JobPosition jobPosition) {
         this.jobPosition = jobPosition;
     }
+
+    public DepartmentCourseSchedule getDepartmentCourseSchedule() {
+        return departmentCourseSchedule;
+    }
+
+    public void setDepartmentCourseSchedule(DepartmentCourseSchedule departmentCourseSchedule) {
+        this.departmentCourseSchedule = departmentCourseSchedule;
+    }
+    
     
     
 }

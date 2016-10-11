@@ -5,6 +5,8 @@
  */
 package business.department;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ayush
@@ -17,13 +19,13 @@ public class Department {
     private DepartmentCourseCatalog departmentCourseCatalog;
     private DepartmentCourseSchedule departmentCourseSchedule;
     private DepartmentStudentDirectory departmentStudentDirectory;
-    private JobPosition jobPosition;
+    private ArrayList<JobPosition> jobPosition;
 
     public Department() {
       //  this.degree = new Degree();
         this.departmentCourseCatalog = new DepartmentCourseCatalog();
        this.departmentCourseSchedule = new DepartmentCourseSchedule();
-      //  this.jobPosition = new JobPosition();
+        this.jobPosition = new ArrayList<JobPosition>();
         this.departmentStudentDirectory = new DepartmentStudentDirectory();
     }
     
@@ -69,13 +71,15 @@ public class Department {
         this.departmentStudentDirectory = departmentStudentDirectory;
     }
 
-    public JobPosition getJobPosition() {
+    public ArrayList<JobPosition> getJobPosition() {
         return jobPosition;
     }
 
-    public void setJobPosition(JobPosition jobPosition) {
+    public void setJobPosition(ArrayList<JobPosition> jobPosition) {
         this.jobPosition = jobPosition;
     }
+
+    
 
     public DepartmentCourseSchedule getDepartmentCourseSchedule() {
         return departmentCourseSchedule;

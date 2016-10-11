@@ -5,6 +5,8 @@
  */
 package business.department;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ayush
@@ -13,6 +15,12 @@ public class JobPosition {
     
     private String jobRole;
     private String jobId;
+    private ArrayList<Teacher> teacherdirectory ;
+    
+    public JobPosition()
+    {
+        this.teacherdirectory = new ArrayList<Teacher>();
+    }
 
     public String getJobRole() {
         return jobRole;
@@ -28,6 +36,14 @@ public class JobPosition {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public ArrayList<Teacher> getTeacherdirectory() {
+        return teacherdirectory;
+    }
+
+    public void setTeacherdirectory(ArrayList<Teacher> teacherdirectory) {
+        this.teacherdirectory = teacherdirectory;
     }
     
     

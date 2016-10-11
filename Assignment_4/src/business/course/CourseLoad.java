@@ -6,20 +6,36 @@
 package business.course;
 
 import business.Semester;
-import business.department.DepartmentCourseCatalog;
+import java.util.ArrayList;
 
 /**
  *
  * @author vinay
  */
 public class CourseLoad {
-    private DepartmentCourseCatalog courseList;
     private SeatAssignment seatAssignment;
-    private Semester semester;
+    private ArrayList<Semester> semester;
     
     public CourseLoad(){
-        this.courseList = new DepartmentCourseCatalog();
+        
         this.seatAssignment = new SeatAssignment();
-        this.semester = new Semester();
+        this.semester = new ArrayList<Semester>();
     }
+
+    public SeatAssignment getSeatAssignment() {
+        return seatAssignment;
+    }
+
+    public void setSeatAssignment(SeatAssignment seatAssignment) {
+        this.seatAssignment = seatAssignment;
+    }
+
+    public ArrayList<Semester> getSemester() {
+        return semester;
+    }
+
+    public void setSemester(ArrayList<Semester> semester) {
+        this.semester = semester;
+    }
+    
 }

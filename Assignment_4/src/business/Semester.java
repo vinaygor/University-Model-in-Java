@@ -6,6 +6,7 @@
 package business;
 
 import business.course.CourseOffering;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,12 +16,12 @@ public class Semester {
     private String semesterName;
     private CalenderYear calenderYear;
     private DateInfo dateInfo;
-    private CourseOffering courseOffering;
+    private ArrayList<CourseOffering> courseOffering;
 
     public Semester() {
         this.calenderYear = new CalenderYear();
         this.dateInfo = new DateInfo();
-        this.courseOffering = new CourseOffering();
+        this.courseOffering = new ArrayList<CourseOffering>();
     }
 
     public CalenderYear getCalenderYear() {
@@ -47,14 +48,13 @@ public class Semester {
         this.dateInfo = dateInfo;
     }
 
-    public CourseOffering getCourseOffering() {
+    public ArrayList<CourseOffering> getCourseOffering() {
         return courseOffering;
     }
 
-    public void setCourseOffering(CourseOffering courseOffering) {
+    public void setCourseOffering(ArrayList<CourseOffering> courseOffering) {
         this.courseOffering = courseOffering;
     }
-    
-    
+   
     
 }

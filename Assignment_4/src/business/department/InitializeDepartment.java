@@ -5,6 +5,7 @@
  */
 package business.department;
 
+import business.Semester;
 import business.Student.InitializeStudent;
 import business.Student.Student;
 import business.course.Course;
@@ -45,11 +46,12 @@ public class InitializeDepartment {
             d1.getDepartmentCourseCatalog().addCourse(course1);
         }
         
-        TeacherDirectory teacherDirectory = initializeTeacher(1);
+        ArrayList<JobPosition> jobPosition = initializeTeacher(1);
         //initializeCourse.getDepartmentCourseCatalog(d1.getDepartmentCourseCatalog());
-        initializeCourse.getTeacherCatalog(teacherDirectory);
-        ArrayList<CourseOffering> courseOffering1 =initializeCourse.initializeCourseOffering(d1);
-        DepartmentCourseSchedule dcs1=initializeDepartCourseSchedule(courseOffering1);
+        //initializeCourse.getTeacherCatalog(teacherDirectory);
+        d1.setJobPosition(jobPosition);
+        ArrayList<Semester> semester1 =initializeCourse.initializeCourseOffering(d1);
+        DepartmentCourseSchedule dcs1=initializeDepartCourseSchedule(semester1);
         d1.setDepartmentCourseSchedule(dcs1);
         department.add(d1);
         
@@ -67,11 +69,12 @@ public class InitializeDepartment {
             d2.getDepartmentCourseCatalog().addCourse(course2);
         }
         
-        TeacherDirectory teacherDirectory2 = initializeTeacher(2);
+        ArrayList<JobPosition> jobPosition1 = initializeTeacher(2);
         //initializeCourse.getDepartmentCourseCatalog(d2.getDepartmentCourseCatalog());
-        initializeCourse.getTeacherCatalog(teacherDirectory2);
-        ArrayList<CourseOffering> courseOffering2 =initializeCourse.initializeCourseOffering(d2);
-        DepartmentCourseSchedule dcs2=initializeDepartCourseSchedule(courseOffering2);
+        //initializeCourse.getTeacherCatalog(teacherDirectory2);
+        d2.setJobPosition(jobPosition1);
+        ArrayList<Semester> semester2 =initializeCourse.initializeCourseOffering(d2);
+        DepartmentCourseSchedule dcs2=initializeDepartCourseSchedule(semester2);
         d2.setDepartmentCourseSchedule(dcs2);
         department.add(d2);
         
@@ -93,11 +96,12 @@ public class InitializeDepartment {
             d3.getDepartmentCourseCatalog().addCourse(course2);
         }
         
-        TeacherDirectory teacherDirectory3 = initializeTeacher(1);
+        ArrayList<JobPosition> jobPosition2 = initializeTeacher(1);
         //initializeCourse.getDepartmentCourseCatalog(d3.getDepartmentCourseCatalog());
-        initializeCourse.getTeacherCatalog(teacherDirectory3);
-        ArrayList<CourseOffering> courseOffering3 =initializeCourse.initializeCourseOffering(d3);
-        DepartmentCourseSchedule dcs3=initializeDepartCourseSchedule(courseOffering3);
+        //initializeCourse.getTeacherCatalog(teacherDirectory3);
+        d3.setJobPosition(jobPosition2);
+        ArrayList<Semester> semester3 =initializeCourse.initializeCourseOffering(d3);
+        DepartmentCourseSchedule dcs3=initializeDepartCourseSchedule(semester3);
         d3.setDepartmentCourseSchedule(dcs3);
         department2.add(d3);
         
@@ -116,11 +120,12 @@ public class InitializeDepartment {
         }
         
         
-        TeacherDirectory teacherDirectory4 = initializeTeacher(2);
+        ArrayList<JobPosition> jobPosition3 = initializeTeacher(2);
         //initializeCourse.getDepartmentCourseCatalog(d4.getDepartmentCourseCatalog());
-        initializeCourse.getTeacherCatalog(teacherDirectory4);
-        ArrayList<CourseOffering> courseOffering4 =initializeCourse.initializeCourseOffering(d4);
-        DepartmentCourseSchedule dcs4=initializeDepartCourseSchedule(courseOffering4);
+        //initializeCourse.getTeacherCatalog(teacherDirectory4);
+        d4.setJobPosition(jobPosition3);
+        ArrayList<Semester> semester4 =initializeCourse.initializeCourseOffering(d4);
+        DepartmentCourseSchedule dcs4=initializeDepartCourseSchedule(semester4);
         d4.setDepartmentCourseSchedule(dcs4);
         department2.add(d4);
         
@@ -139,14 +144,16 @@ public class InitializeDepartment {
             d5.getDepartmentCourseCatalog().addCourse(course2);
         }
         
-        TeacherDirectory teacherDirectory5 = initializeTeacher(1);
+        ArrayList<JobPosition> jobPosition4 = initializeTeacher(1);
        // initializeCourse.getDepartmentCourseCatalog(d5.getDepartmentCourseCatalog());
-        initializeCourse.getTeacherCatalog(teacherDirectory5);
-        ArrayList<CourseOffering> courseOffering5 =initializeCourse.initializeCourseOffering(d5);
-        DepartmentCourseSchedule dcs5=initializeDepartCourseSchedule(courseOffering5);
+        //initializeCourse.getTeacherCatalog(teacherDirectory5);
+        d5.setJobPosition(jobPosition4);
+        ArrayList<Semester> semester5 =initializeCourse.initializeCourseOffering(d5);
+        DepartmentCourseSchedule dcs5=initializeDepartCourseSchedule(semester5);
         d5.setDepartmentCourseSchedule(dcs5);
         department2.add(d5);
         
+  //      System.out.println(" Department teacher "+d5.getJobPosition().get(0).getTeacherdirectory().get(1).getPerson().getFirstName());
         return department2;
     
     }
@@ -155,17 +162,20 @@ public class InitializeDepartment {
         
      }
     
-    public  TeacherDirectory initializeTeacher(int deptId)
+    public  ArrayList<JobPosition> initializeTeacher(int deptId)
     {
+        
         switch(deptId)
         {
             
         case 1:
         {
-        TeacherDirectory teacherDirectory = new TeacherDirectory();
+        ArrayList<JobPosition> jobPositionList = new ArrayList<JobPosition>();
+        JobPosition jp = new JobPosition();
         Teacher teacher = new Teacher();
-        teacher.getJobPosition().setJobId("1");
-        teacher.getJobPosition().setJobRole("Faculty");
+        jp.setJobId("1");
+        jp.setJobRole("Faculty");
+        
         teacher.getPerson().setFirstName("Kal");
         teacher.getPerson().setLastName("Bugrara");
         teacher.getPerson().setPersonID("001");
@@ -178,7 +188,8 @@ public class InitializeDepartment {
         teacher.getPerson().getAddress().setPinNumber("32132");
         teacher.setEducationQualification("Phd");
         teacher.setExperience("20");
-        teacherDirectory.addTeacher(teacher);
+        jp.getTeacherdirectory().add(teacher);
+        //teacherDirectory.addTeacher(teacher);
         
         Teacher teacher1 = new Teacher();
         teacher1.getJobPosition().setJobId("2");
@@ -195,17 +206,26 @@ public class InitializeDepartment {
         teacher1.getPerson().getAddress().setPinNumber("32132");
         teacher1.setEducationQualification("Phd");
         teacher1.setExperience("20");
-        teacherDirectory.addTeacher(teacher1);
+        jp.getTeacherdirectory().add(teacher1);
+        //teacherDirectory.addTeacher(teacher1);
         
-        return teacherDirectory;
+        JobPosition jp1 = new JobPosition();
+        jp1.setJobId("2");
+        jp1.setJobRole("Staff");
+        
+        jobPositionList.add(jp);
+        jobPositionList.add(jp1);
+        return jobPositionList;
         
         }
         case 2:
         {
-        TeacherDirectory teacherDirectory1 = new TeacherDirectory();
+        ArrayList<JobPosition> jobPositionList = new ArrayList<JobPosition>();
+        JobPosition jp1 = new JobPosition();
+       // TeacherDirectory teacherDirectory1 = new TeacherDirectory();
         Teacher teacher2 = new Teacher();
-        teacher2.getJobPosition().setJobId("1");
-        teacher2.getJobPosition().setJobRole("Faculty");
+        jp1.setJobId("1");
+        jp1.setJobRole("Faculty");
         teacher2.getPerson().setFirstName("Steve");
         teacher2.getPerson().setLastName("Klosterman");
         teacher2.getPerson().setPersonID("003");
@@ -218,7 +238,9 @@ public class InitializeDepartment {
         teacher2.getPerson().getAddress().setPinNumber("32132");
         teacher2.setEducationQualification("Phd");
         teacher2.setExperience("20");
-        teacherDirectory1.addTeacher(teacher2);
+        jp1.getTeacherdirectory().add(teacher2);
+        //teacherDirectory1.addTeacher(teacher2);
+        
         
         Teacher teacher3 = new Teacher();
         teacher3.getJobPosition().setJobId("2");
@@ -235,8 +257,16 @@ public class InitializeDepartment {
         teacher3.getPerson().getAddress().setPinNumber("32132");
         teacher3.setEducationQualification("Phd");
         teacher3.setExperience("20");
-        teacherDirectory1.addTeacher(teacher3);
-        return teacherDirectory1;
+        jp1.getTeacherdirectory().add(teacher3);
+        //teacherDirectory1.addTeacher(teacher3);
+        
+            JobPosition jp2 = new JobPosition();
+            jp2.setJobId("2");
+            jp2.setJobRole("Staff");
+            
+            jobPositionList.add(jp1);
+            jobPositionList.add(jp2);
+        return jobPositionList;
         }
         }
         return null;
@@ -244,14 +274,14 @@ public class InitializeDepartment {
         
     }
     
-    public DepartmentCourseSchedule initializeDepartCourseSchedule(ArrayList<CourseOffering> courseOffering)
+    public DepartmentCourseSchedule initializeDepartCourseSchedule(ArrayList<Semester> semester)
     {
         DepartmentCourseSchedule dcs = new DepartmentCourseSchedule();
-        for(int i=0; i<courseOffering.size();i++)
+        dcs.setSemester(semester);
+        for(int i=0; i<semester.size();i++)
         {
             
-            dcs.setCourseOffering(courseOffering.get(i));
-            dcs.setSemester(courseOffering.get(i).getSemester());
+            dcs.setCourseOffering(semester.get(i).getCourseOffering());    
             
         }
         return dcs;

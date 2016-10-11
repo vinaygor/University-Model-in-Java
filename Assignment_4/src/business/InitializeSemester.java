@@ -19,8 +19,9 @@ public ArrayList<Semester> initializeSemester(){
     
     ArrayList<Semester> semesterList = new ArrayList<Semester>();
     ArrayList<CalenderYear> calenderList = new ArrayList<CalenderYear>();
-    CalenderYear calender  = new CalenderYear();
-    for(int i=0;i<10;i++){
+    
+    for(int i=0;i<11;i++){
+        CalenderYear calender  = new CalenderYear();
         calender.setYear(valueOf(2006+i));
         calenderList.add(calender);
        
@@ -50,6 +51,12 @@ public ArrayList<Semester> initializeSemester(){
     
     
     }
+//    for(int i=0;i<semesterList.size();i++)
+//    {
+//        System.out.println(""+semesterList.get(i).getSemesterName());
+//        System.out.println(""+semesterList.get(i).getCalenderYear().getYear());
+//    }
+    
     return semesterList;
 }    
 }

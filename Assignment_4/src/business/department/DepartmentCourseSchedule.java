@@ -7,35 +7,39 @@ package business.department;
 
 import business.Semester;
 import business.course.CourseOffering;
+import java.util.ArrayList;
 
 /**
  *
  * @author vinay
  */
 public class DepartmentCourseSchedule {
-    private CourseOffering courseOffering;
-    private Semester semester;
+    private ArrayList<CourseOffering> courseOffering;
+    private ArrayList<Semester> semester;
     
     public DepartmentCourseSchedule(){
-        this.courseOffering = new CourseOffering();
-        this.semester = new Semester();
+        this.courseOffering = new ArrayList<CourseOffering>();
+        this.semester = new ArrayList<Semester>();
     }
 
-    public CourseOffering getCourseOffering() {
+    public ArrayList<CourseOffering> getCourseOffering() {
         return courseOffering;
     }
 
-    public void setCourseOffering(CourseOffering courseOffering) {
+    public void setCourseOffering(ArrayList<CourseOffering> courseOffering) {
         this.courseOffering = courseOffering;
     }
 
-    public Semester getSemester() {
+    public ArrayList<Semester> getSemester() {
         return semester;
     }
 
-    public void setSemester(Semester semester) {
+    public void setSemester(ArrayList<Semester> semester) {
         this.semester = semester;
     }
+
+
+    
     
     
 }

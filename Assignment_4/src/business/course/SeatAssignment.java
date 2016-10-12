@@ -5,24 +5,50 @@
  */
 package business.course;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author vinay
  */
 public class SeatAssignment {
-    private String gpaScore;
-    private Seat seat;
+   Map seatAssignment = new HashMap();
+   private Seat seat;
+   private String gpa;
+   Map seatCount = new HashMap();
 
-    public SeatAssignment() {
-        this.seat = new Seat();
+    public Seat getSeat() {
+        return seat;
     }
 
-    public String getGpaScore() {
-        return gpaScore;
+    public void setSeat(Seat seat) {
+        this.seat = seat;
     }
 
-    public void setGpaScore(String gpaScore) {
-        this.gpaScore = gpaScore;
+    public String getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(String gpa) {
+        this.gpa = gpa;
+    }
+   
+    public Map getSeatAssignment() {
+        return seatAssignment;
+    }
+
+    public void setSeatAssignment(int courseId, int count) {
+        if(courseId%2==0)
+        seatAssignment.put(courseId, "3.6");
+        else
+        seatAssignment.put(courseId, "3.7");    
+        
+        seatCount.put(courseId,count);
+    }
+   
+    public void getCourseId(Seat seat){
+     
     }
     
     

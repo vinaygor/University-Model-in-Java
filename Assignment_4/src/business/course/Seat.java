@@ -5,40 +5,28 @@
  */
 package business.course;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author vinay
  */
 public class Seat {
     
-    private String totalSeat;
-    private String availableNoOfSeats;
-    private String unAvailableNoOfSeats;
-
-    public String getTotalSeat() {
-        return totalSeat;
+    private ArrayList<CourseOffering> courseOffering;
+    
+    public Seat(){
+        courseOffering = new ArrayList<CourseOffering>();
     }
 
-    public void setTotalSeat(String totalSeat) {
-        this.totalSeat = totalSeat;
+    public ArrayList<CourseOffering> getCourseOffering() {
+        return courseOffering;
     }
 
-
-    public String getAvailableNoOfSeats() {
-        return availableNoOfSeats;
+    public void setCourseOffering(ArrayList<CourseOffering> courseOffering) {
+        this.courseOffering = courseOffering;
     }
-
-    public void setAvailableNoOfSeats(String availableNoOfSeats) {
-        this.availableNoOfSeats = availableNoOfSeats;
-    }
-
-    public String getUnAvailableNoOfSeats() {
-        return unAvailableNoOfSeats;
-    }
-
-    public void setUnAvailableNoOfSeats(String unAvailableNoOfSeats) {
-        this.unAvailableNoOfSeats = unAvailableNoOfSeats;
-    }
+    
     
     
 }

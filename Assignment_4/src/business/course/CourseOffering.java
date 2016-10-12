@@ -17,18 +17,19 @@ import java.util.ArrayList;
  * @author vinay
  */
 public class CourseOffering {
-    private Semester semester;
+    
     private DepartmentCourseCatalog courseList;
     private Teacher teacher;
     private ClassRoom classRoom;
-    private Seat seat;
+    private int numberOfSeats;
+   
 
     public CourseOffering() {
       //  this.semester = new Semester();
         this.courseList = new DepartmentCourseCatalog();
         this.teacher = new Teacher();
         this.classRoom = new ClassRoom();
-        this.seat = new Seat();
+        
     }
 
 //    public Semester getSemester() {
@@ -63,14 +64,14 @@ public class CourseOffering {
         this.classRoom = classRoom;
     }
 
-    public Seat getSeat() {
-        return seat;
+    public int getNumberOfSeats() {
+        return numberOfSeats;
     }
 
-    public void setSeat(Seat seat) {
-        this.seat = seat;
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
     }
-    
+
     
     
     

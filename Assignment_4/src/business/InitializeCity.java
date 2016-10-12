@@ -27,16 +27,27 @@ public class InitializeCity {
         
         InitializeUniversity initializeUniversity = new InitializeUniversity();
         ArrayList<University> u = initializeUniversity.initializeUniversity();
-//        for(int i =0;i<u.size();i++){
-//           University u1 = u.get(i);
-//           System.out.println("University Name :"+u1.getUniversityName());
-//        for(College c1: u1.getCollegeDirectory().getCollegeList())
-//        {
-//            System.out.println("College Name :"+c1.getCollegeName());
-//            for(Department d :c1.getDepartmentDirectory().getDepartmentList())
-//            {
-//                System.out.println("Department Name :"+d.getDepartmentName());
-//                
+        int count=0;
+        for(int i =0;i<u.size();i++){
+           University u1 = u.get(i);
+            System.out.println(" University "+u1.getUniversityName()+" "+u1.getUniversityStudentDirectory().getStudentList().size());
+        
+           System.out.println("University Name :"+u1.getUniversityName());
+        for(College c1: u1.getCollegeDirectory().getCollegeList())
+        {
+            //System.out.println("College Name :"+c1.getCollegeName());
+            for(Department d :c1.getDepartmentDirectory().getDepartmentList())
+            {
+                //System.out.println("Department Name :"+d.getDepartmentName());
+                for(int k =0 ;k<d.getDepartmentCourseCatalog().getCourseCatalog().size();k++)
+                {
+                    Course tempc = d.getDepartmentCourseCatalog().getCourseCatalog().get(k);
+                    if(tempc.getCourseName().equals("AED")){
+                        count++;
+                    }
+                  //  System.out.println("Course ID: "+tempc.getCourseId()+" Course Name :"+tempc.getCourseName());
+                }
+        
 //               // System.out.println("Department semester size "+d.getDepartmentCourseSchedule().getSemester().getCourseOffering().size());
 //                for(int z=0;z<d.getDepartmentCourseSchedule().getSemester().size();z++)    
 //                {  
@@ -70,4 +81,9 @@ public class InitializeCity {
 //    
     
 }
+        }
+            
+        }
+        System.out.println("Count students of AED : "+count);
+    }
 }

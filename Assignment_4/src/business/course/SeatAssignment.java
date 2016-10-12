@@ -38,13 +38,15 @@ public class SeatAssignment {
         return seatAssignment;
     }
 
-    public void setSeatAssignment(int courseId, int count) {
-        if(courseId%2==0)
+    public void setSeatAssignment(String courseId, int count) {
+        seatCount.put(courseId,count);
+        //System.out.println(""+courseId);
+        if(Integer.parseInt(courseId)%2==0)
         seatAssignment.put(courseId, "3.6");
         else
         seatAssignment.put(courseId, "3.7");    
         
-        seatCount.put(courseId,count);
+        
     }
    
     public void getCourseId(Seat seat){

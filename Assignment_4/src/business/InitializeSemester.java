@@ -20,14 +20,14 @@ public ArrayList<Semester> initializeSemester(){
     ArrayList<Semester> semesterList = new ArrayList<Semester>();
     ArrayList<CalenderYear> calenderList = new ArrayList<CalenderYear>();
     
-    for(int i=0;i<11;i++){
+    for(int i=0;i<1;i++){
         CalenderYear calender  = new CalenderYear();
         calender.setYear(valueOf(2006+i));
         calenderList.add(calender);
        
     }
     
-    for(int i = 0; i<10; i++){
+    for(int i = 0; i<1; i++){
     Semester sem = new Semester();
     sem.setSemesterName("Fall");
     sem.getCalenderYear().setYear(calenderList.get(i).getYear());

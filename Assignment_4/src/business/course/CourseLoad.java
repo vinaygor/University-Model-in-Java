@@ -13,22 +13,24 @@ import java.util.ArrayList;
  * @author vinay
  */
 public class CourseLoad {
-    private SeatAssignment seatAssignment;
+    private ArrayList<SeatAssignment> seatAssignment;
     private ArrayList<Semester> semester;
     
     public CourseLoad(){
         
-        this.seatAssignment = new SeatAssignment();
+        this.seatAssignment = new ArrayList<SeatAssignment>();
         this.semester = new ArrayList<Semester>();
     }
 
-    public SeatAssignment getSeatAssignment() {
+    public ArrayList<SeatAssignment> getSeatAssignment() {
         return seatAssignment;
     }
 
-    public void setSeatAssignment(SeatAssignment seatAssignment) {
+    public void setSeatAssignment(ArrayList<SeatAssignment> seatAssignment) {
         this.seatAssignment = seatAssignment;
     }
+
+    
 
     public ArrayList<Semester> getSemester() {
         return semester;

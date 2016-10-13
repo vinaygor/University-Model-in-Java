@@ -220,8 +220,8 @@ public class InitializeDepartment {
         //teacherDirectory.addTeacher(teacher);
         
         Teacher teacher1 = new Teacher();
-        teacher1.getJobPosition().setJobId("2");
-        teacher1.getJobPosition().setJobRole("Faculty");
+//        teacher1.getJobPosition().setJobId("2");
+//        teacher1.getJobPosition().setJobRole("Faculty");
         teacher1.getPerson().setFirstName("Yusuf");
         teacher1.getPerson().setLastName("Ozbek");
         teacher1.getPerson().setPersonID("002");
@@ -236,6 +236,78 @@ public class InitializeDepartment {
         teacher1.setExperience("20");
         jp.getTeacherdirectory().add(teacher1);
         //teacherDirectory.addTeacher(teacher1);
+        
+        Teacher teacher2 = new Teacher();
+//        teacher2.getJobPosition().setJobId("2");
+//        teacher2.getJobPosition().setJobRole("Faculty");
+        teacher2.getPerson().setFirstName("ABC");
+        teacher2.getPerson().setLastName("PQR");
+        teacher2.getPerson().setPersonID("003");
+        teacher2.getPerson().setGender("Male");
+        teacher2.getPerson().setDateOfBirth("01/01/1980");
+        teacher2.getPerson().getAddress().setCity("Boston");
+        teacher2.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher2.getPerson().getAddress().setStreet2("Clearway");
+        teacher2.getPerson().getAddress().setState("MA");
+        teacher2.getPerson().getAddress().setPinNumber("32132");
+        teacher2.setEducationQualification("BE");
+        teacher2.setExperience("10");
+        jp.getTeacherdirectory().add(teacher2);
+        
+        Teacher teacher3 = new Teacher();
+//        teacher3.getJobPosition().setJobId("2");
+//        teacher3.getJobPosition().setJobRole("Faculty");
+        teacher3.getPerson().setFirstName("QPR");
+        teacher3.getPerson().setLastName("SAWQQ");
+        teacher3.getPerson().setPersonID("004");
+        teacher3.getPerson().setGender("Male");
+        teacher3.getPerson().setDateOfBirth("01/01/1980");
+        teacher3.getPerson().getAddress().setCity("Boston");
+        teacher3.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher3.getPerson().getAddress().setStreet2("Clearway");
+        teacher3.getPerson().getAddress().setState("MA");
+        teacher3.getPerson().getAddress().setPinNumber("32132");
+        teacher3.setEducationQualification("Ms");
+        teacher3.setExperience("15");
+        jp.getTeacherdirectory().add(teacher3);
+        
+        
+        Teacher teacher4 = new Teacher();
+//        teacher4.getJobPosition().setJobId("2");
+//        teacher4.getJobPosition().setJobRole("Faculty");
+        teacher4.getPerson().setFirstName("EFG");
+        teacher4.getPerson().setLastName("LMNOP");
+        teacher4.getPerson().setPersonID("005");
+        teacher4.getPerson().setGender("Male");
+        teacher4.getPerson().setDateOfBirth("01/01/1980");
+        teacher4.getPerson().getAddress().setCity("Boston");
+        teacher4.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher4.getPerson().getAddress().setStreet2("Clearway");
+        teacher4.getPerson().getAddress().setState("MA");
+        teacher4.getPerson().getAddress().setPinNumber("32132");
+        teacher4.setEducationQualification("Phd");
+        teacher4.setExperience("20");
+        jp.getTeacherdirectory().add(teacher4);
+        
+        
+        Teacher teacher5 = new Teacher();
+//        teacher5.getJobPosition().setJobId("2");
+//        teacher5.getJobPosition().setJobRole("Faculty");
+        teacher5.getPerson().setFirstName("KMLN");
+        teacher5.getPerson().setLastName("QPOP");
+        teacher5.getPerson().setPersonID("006");
+        teacher5.getPerson().setGender("Male");
+        teacher5.getPerson().setDateOfBirth("01/01/1980");
+        teacher5.getPerson().getAddress().setCity("Boston");
+        teacher5.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher5.getPerson().getAddress().setStreet2("Clearway");
+        teacher5.getPerson().getAddress().setState("MA");
+        teacher5.getPerson().getAddress().setPinNumber("32132");
+        teacher5.setEducationQualification("MS");
+        teacher5.setExperience("10");
+        jp.getTeacherdirectory().add(teacher5);
+        
+        
         
         JobPosition jp1 = new JobPosition();
         jp1.setJobId("2");
@@ -256,7 +328,7 @@ public class InitializeDepartment {
         jp1.setJobRole("Faculty");
         teacher2.getPerson().setFirstName("Steve");
         teacher2.getPerson().setLastName("Klosterman");
-        teacher2.getPerson().setPersonID("003");
+        teacher2.getPerson().setPersonID("007");
         teacher2.getPerson().setGender("Male");
         teacher2.getPerson().setDateOfBirth("01/01/1975");
         teacher2.getPerson().getAddress().setCity("Boston");
@@ -271,11 +343,11 @@ public class InitializeDepartment {
         
         
         Teacher teacher3 = new Teacher();
-        teacher3.getJobPosition().setJobId("2");
-        teacher3.getJobPosition().setJobRole("Faculty");
+//        teacher3.getJobPosition().setJobId("2");
+//        teacher3.getJobPosition().setJobRole("Faculty");
         teacher3.getPerson().setFirstName("Ben");
         teacher3.getPerson().setLastName("Haris");
-        teacher3.getPerson().setPersonID("004");
+        teacher3.getPerson().setPersonID("008");
         teacher3.getPerson().setGender("Male");
         teacher3.getPerson().setDateOfBirth("01/01/1975");
         teacher3.getPerson().getAddress().setCity("Boston");
@@ -287,6 +359,77 @@ public class InitializeDepartment {
         teacher3.setExperience("20");
         jp1.getTeacherdirectory().add(teacher3);
         //teacherDirectory1.addTeacher(teacher3);
+        
+         Teacher teacher24 = new Teacher();
+//        teacher2.getJobPosition().setJobId("2");
+//        teacher2.getJobPosition().setJobRole("Faculty");
+        teacher24.getPerson().setFirstName("ABC12");
+        teacher24.getPerson().setLastName("PQR2");
+        teacher24.getPerson().setPersonID("009");
+        teacher24.getPerson().setGender("Male");
+        teacher24.getPerson().setDateOfBirth("01/01/1980");
+        teacher24.getPerson().getAddress().setCity("Boston");
+        teacher24.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher24.getPerson().getAddress().setStreet2("Clearway");
+        teacher24.getPerson().getAddress().setState("MA");
+        teacher24.getPerson().getAddress().setPinNumber("32132");
+        teacher24.setEducationQualification("BE");
+        teacher24.setExperience("10");
+        jp1.getTeacherdirectory().add(teacher24);
+        
+        Teacher teacher31 = new Teacher();
+//        teacher3.getJobPosition().setJobId("2");
+//        teacher3.getJobPosition().setJobRole("Faculty");
+        teacher31.getPerson().setFirstName("QPR123");
+        teacher31.getPerson().setLastName("SAW123");
+        teacher31.getPerson().setPersonID("010");
+        teacher31.getPerson().setGender("Male");
+        teacher31.getPerson().setDateOfBirth("01/01/1980");
+        teacher31.getPerson().getAddress().setCity("Boston");
+        teacher31.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher31.getPerson().getAddress().setStreet2("Clearway");
+        teacher31.getPerson().getAddress().setState("MA");
+        teacher31.getPerson().getAddress().setPinNumber("32132");
+        teacher31.setEducationQualification("PHD");
+        teacher31.setExperience("15");
+        jp1.getTeacherdirectory().add(teacher31);
+        
+        
+        Teacher teacher41 = new Teacher();
+//        teacher4.getJobPosition().setJobId("2");
+//        teacher4.getJobPosition().setJobRole("Faculty");
+        teacher41.getPerson().setFirstName("EFG123");
+        teacher41.getPerson().setLastName("LMNOP124");
+        teacher41.getPerson().setPersonID("011");
+        teacher41.getPerson().setGender("Male");
+        teacher41.getPerson().setDateOfBirth("01/01/1980");
+        teacher41.getPerson().getAddress().setCity("Boston");
+        teacher41.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher41.getPerson().getAddress().setStreet2("Clearway");
+        teacher41.getPerson().getAddress().setState("MA");
+        teacher41.getPerson().getAddress().setPinNumber("32132");
+        teacher41.setEducationQualification("MS");
+        teacher41.setExperience("20");
+        jp1.getTeacherdirectory().add(teacher41);
+        
+        
+        Teacher teacher51 = new Teacher();
+//        teacher5.getJobPosition().setJobId("2");
+//        teacher5.getJobPosition().setJobRole("Faculty");
+        teacher51.getPerson().setFirstName("KMLN123");
+        teacher51.getPerson().setLastName("QPOP123");
+        teacher51.getPerson().setPersonID("012");
+        teacher51.getPerson().setGender("Female");
+        teacher51.getPerson().setDateOfBirth("01/01/1980");
+        teacher51.getPerson().getAddress().setCity("Boston");
+        teacher51.getPerson().getAddress().setStreet1("Huntington Avenue");
+        teacher51.getPerson().getAddress().setStreet2("Clearway");
+        teacher51.getPerson().getAddress().setState("MA");
+        teacher51.getPerson().getAddress().setPinNumber("32132");
+        teacher51.setEducationQualification("MS");
+        teacher51.setExperience("10");
+        jp1.getTeacherdirectory().add(teacher51);
+        
         
             JobPosition jp2 = new JobPosition();
             jp2.setJobId("2");

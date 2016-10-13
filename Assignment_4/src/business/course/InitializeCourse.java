@@ -33,6 +33,7 @@ public class InitializeCourse {
     private static int buildingNo=100;
     int i=1;
     public static int count=1;
+    public static int number =0;
     public InitializeCourse(){
         initializeSemester = new InitializeSemester();
         departmentCourseCatalog= new ArrayList<DepartmentCourseCatalog>();
@@ -78,25 +79,41 @@ public class InitializeCourse {
         course3.setPrerequisiteCourse("None");
         courseCatalog1.add(course3);
         
+        Course course4 = new Course();
+        course4.setCourseId(valueOf(count++));
+        course4.setCourseName("Web Design");
+        course4.setCourseType("Elective");
+        course4.setFollowUpCourse("Web Tools");
+        course4.setPrerequisiteCourse("None");
+        courseCatalog1.add(course4);
+        
+        Course course5 = new Course();
+        course5.setCourseId(valueOf(count++));
+        course5.setCourseName("OOPS");
+        course5.setCourseType("Elective");
+        course5.setFollowUpCourse("None");
+        course5.setPrerequisiteCourse("None");
+        courseCatalog1.add(course5);
+        
         return courseCatalog1;
         
         case 2:
         ArrayList<Course> courseCatalog2 = new ArrayList<Course>();
-        Course course4 = new Course();
-        course4.setCourseId(valueOf(count++));
-        course4.setCourseName("P.M.");
-        course4.setCourseType("Mandatory");
-        course4.setFollowUpCourse("None");
-        course4.setPrerequisiteCourse("None");
-        courseCatalog2.add(course4);
+        Course course8 = new Course();
+        course8.setCourseId(valueOf(count++));
+        course8.setCourseName("P.M.");
+        course8.setCourseType("Mandatory");
+        course8.setFollowUpCourse("None");
+        course8.setPrerequisiteCourse("None");
+        courseCatalog2.add(course8);
         
-        Course course5 = new Course();
-        course5.setCourseId(valueOf(count++));
-        course5.setCourseName("EDM");
-        course5.setCourseType("Elective");
-        course5.setFollowUpCourse("None");
-        course5.setPrerequisiteCourse("None");
-        courseCatalog2.add(course5);
+        Course course9 = new Course();
+        course9.setCourseId(valueOf(count++));
+        course9.setCourseName("EDM");
+        course9.setCourseType("Elective");
+        course9.setFollowUpCourse("None");
+        course9.setPrerequisiteCourse("None");
+        courseCatalog2.add(course9);
         
         Course course6 = new Course();
         course6.setCourseId(valueOf(count++));
@@ -113,6 +130,23 @@ public class InitializeCourse {
         course7.setFollowUpCourse("None");
         course7.setPrerequisiteCourse("None");
         courseCatalog2.add(course7);
+       
+         
+        Course course10 = new Course();
+        course10.setCourseId(valueOf(count++));
+        course10.setCourseName("EDM");
+        course10.setCourseType("Elective");
+        course10.setFollowUpCourse("None");
+        course10.setPrerequisiteCourse("None");
+        courseCatalog2.add(course10);
+         
+        Course course11 = new Course();
+        course11.setCourseId(valueOf(count++));
+        course11.setCourseName("EDM");
+        course11.setCourseType("Elective");
+        course11.setFollowUpCourse("None");
+        course11.setPrerequisiteCourse("None");
+        courseCatalog2.add(course11);
         
         
         return courseCatalog2;
@@ -138,7 +172,7 @@ public class InitializeCourse {
             
             //System.out.println("Teacher di size"+td.size());
             if(s.getSemesterName().equals("Fall"))
-            for(int j=0;j<2;j++)
+            for(int j=0;j<6;j++)
             { 
                 
                 Course c = tempDept.get(j);
@@ -155,7 +189,7 @@ public class InitializeCourse {
                 
             }
             else if(s.getSemesterName().equals("Spring"))
-            for(int j=2;j<4;j++)
+            for(int j=0;j<6;j++)
             { 
                  Course c= tempDept.get(j);
                  int a=0;
@@ -173,7 +207,7 @@ public class InitializeCourse {
                 
             }
             else
-                for(int j=0;j<2;j++)
+                for(int j=0;j<6;j++)
             { 
                  Course c= tempDept.get(j);
                  dc1.addCourse(c);
@@ -193,7 +227,7 @@ public class InitializeCourse {
             s.setCourseOffering(courseOffering);   
             SeatAssignment seatAssignment = initializeSeatAssignment(seat1);
             seatAssignmentList.add(seatAssignment);
-            System.out.println(" Seat Ass "+seatAssignmentList.size() + " Sem list "+semesterList.size());
+           // System.out.println(" Seat Ass "+seatAssignmentList.size() + " Sem list "+semesterList.size());
         }
       }
         
@@ -264,8 +298,13 @@ public class InitializeCourse {
         courseLoad.setSeatAssignment(seatAssignment);
         Transcript transcript = new Transcript();
         transcript.setCourseLoad(courseLoad);
-        
-        ArrayList<Student> s = initializeStudent.intializeStudentDetails(d1.getDepartmentId(),transcript);
+        number++;
+        int num;
+        if(number%2==0)
+            num=1;
+        else 
+            num=2;
+        ArrayList<Student> s = initializeStudent.intializeStudentDetails(d1.getDepartmentId(),transcript,num);
         for(int i=0;i<s.size();i++)
         {   Student s1 = s.get(i);
             d1.getDepartmentStudentDirectory().addDepartmentStudent(s1);

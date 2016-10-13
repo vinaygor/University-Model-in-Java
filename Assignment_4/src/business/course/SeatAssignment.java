@@ -6,6 +6,7 @@
 package business.course;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -41,17 +42,26 @@ public class SeatAssignment {
     public void setSeatAssignment(String courseId, int count) {
         seatCount.put(courseId,count);
         //System.out.println(""+courseId);
-        if(Integer.parseInt(courseId)%2==0)
+        if(Integer.parseInt(courseId)%3==1)
         seatAssignment.put(courseId, "3.6");
+        else if(Integer.parseInt(courseId)%3==2)
+        seatAssignment.put(courseId, "3.7");   
         else
-        seatAssignment.put(courseId, "3.7");    
+            seatAssignment.put(courseId, "3.3");
         
         
     }
    
-    public void getCourseId(Seat seat){
+    public void printSeat(){
      
+//        Map transcript = seatCount;
+//        Iterator<Map.Entry> entries = transcript.entrySet().iterator();
+//        while(entries.hasNext()){
+//            Map.Entry entry = entries.next();
+//            System.out.println("Course Id = "+entry.getKey()+ ", Seats left = "+entry.getValue());
+//            
+        }
     }
     
     
-}
+

@@ -7,7 +7,7 @@ package business.college;
 
 import business.Student.Student;
 import business.course.CourseLoad;
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -32,9 +32,19 @@ public class Transcript {
     public void getTranscript(Student student)
     {
            
+        double totalgrade=0;
+        double totalcourse=0;
         
         Map transcript = this.courseLoad.studentCourseLoad(student.getSemesterName(),student);
-        System.out.println("Transcript Size" +transcript.size());
+        Iterator<Map.Entry> entries = transcript.entrySet().iterator();
+        while(entries.hasNext()){
+            Map.Entry entry = entries.next();
+            System.out.println("Course Id = "+entry.getKey()+ ", Grade = "+entry.getValue());
+            totalgrade=Double.parseDouble(entry.getValue().toString()) + totalgrade;
+            totalcourse++;
+        }
+        System.out.println("Total GPA of the Student is :"+(totalgrade/totalcourse));
+       // System.out.println("Transcript Size" +transcript.size());
         
     }
     

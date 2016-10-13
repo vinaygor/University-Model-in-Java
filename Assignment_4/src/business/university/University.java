@@ -5,6 +5,7 @@
  */
 package business.university;
 
+import business.Student.AlumniDirectory;
 import business.college.CollegeDirectory;
 import business.userdata.Address;
 
@@ -18,11 +19,21 @@ public class University {
     private Address universityAddress;
     private CollegeDirectory collegeDirectory;
     private UniversityStudentDirectory universityStudentDirectory;
+    private AlumniDirectory ad;
 
     public University() {
         this.universityAddress = new Address();
         this.collegeDirectory = new CollegeDirectory();
         this.universityStudentDirectory = new UniversityStudentDirectory(collegeDirectory);
+        
+    }
+
+    public AlumniDirectory getAd() {
+        return ad;
+    }
+
+    public void setAd(AlumniDirectory ad) {
+        this.ad = ad;
     }
     
     

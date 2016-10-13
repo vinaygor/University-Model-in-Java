@@ -30,7 +30,7 @@ public class InitializeCollege {
             ArrayList<College> collegeList = new ArrayList<College>();
     College c1 = new College();
     c1.setCollegeId("1");
-    c1.setCollegeName("BUS");
+    c1.setCollegeName("Business College");
     c1.getCollegeAddress().setCity("Boston");
     c1.getCollegeAddress().setStreet1("qwer");
     c1.getCollegeAddress().setStreet2("dsdsd");
@@ -87,7 +87,7 @@ public class InitializeCollege {
            
     College c4 = new College();
     c4.setCollegeId("4");
-    c4.setCollegeName("PPPP");
+    c4.setCollegeName("Sherman College");
     c4.getCollegeAddress().setCity("Boston");
     c4.getCollegeAddress().setStreet1("123");
     c4.getCollegeAddress().setStreet2("dadsad23sd");
@@ -104,7 +104,7 @@ public class InitializeCollege {
     
     College c5 = new College();
     c5.setCollegeId("5");
-    c5.setCollegeName("MECH");
+    c5.setCollegeName("Snell");
     c5.getCollegeAddress().setCity("Boston");
     c5.getCollegeAddress().setStreet1("asda");
     c5.getCollegeAddress().setStreet2("ds234");

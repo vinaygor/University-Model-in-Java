@@ -8,9 +8,7 @@ package business;
 import business.Student.Student;
 import business.college.College;
 import business.course.Course;
-import business.course.CourseOffering;
 import business.department.Department;
-import business.department.DepartmentCourseCatalog;
 import business.university.InitializeUniversity;
 import business.university.University;
 import java.util.ArrayList;
@@ -39,7 +37,8 @@ public class InitializeCity {
             System.out.println("3. College Level Details");
             System.out.println("4. Department Level Details");
             System.out.println("5. Alumni Performance Report");
-            System.out.println("6. Exit");
+            System.out.println("6. Obtain GPA Scores for students");
+            System.out.println("7. Exit");
             System.out.println("Enter the choice:");
             int n = s.nextInt();
             switch(n)
@@ -68,11 +67,11 @@ public class InitializeCity {
                         System.out.println("University Name : "+u1.getUniversityName());
                         for(int q=0;q<u1.getUniversityStudentDirectory().getStudentList().size();q++){
                             Student s1 = u1.getUniversityStudentDirectory().getStudentList().get(q);
-                            s1.getTranscript().getTranscript(s1);
+                            s1.getTranscript().getTranscript1(s1);
                             totalSeatLeft = s1.getTranscript().getSeatCount(s1);
                             
                         }
-                        System.out.println("Total number of Seats forall Courses : 5400");
+                        System.out.println("Total number of Seats forall Courses : 9210");
                         System.out.println("Total nmber of seats left for all the courses :"+totalSeatLeft);
                         System.out.println("----------------------------------------------------------");
                     }
@@ -90,16 +89,17 @@ public class InitializeCity {
                              
                              facultySize = facultySize + d.getJobPosition().size();
                              
+                             
                          }
-                        System.out.println("College Name :"+c1.getCollegeName()+"  ------ Faculty Student Ratio (College Level)- "+facultySize+":"+c1.getCollegeStudentDirectory().getStudentListCollege().size());
+                        System.out.println("College Name :"+c1.getCollegeName()+"  ------ Faculty Student Ratio (College Level)- "+c1.getCollegeStudentDirectory().getStudentListCollege().size()+":"+facultySize);
 //                       
                         }
+                     }
                          
-                     
-                     
-                     }   
-                  break;  
+                        
+                   
                 }
+                 break; 
                 case 3:
                  {
                      for(int j=0;j<u.size();j++)
@@ -151,45 +151,139 @@ public class InitializeCity {
                     for(int j=0;j<u.size();j++)
                      {
                          University u2 = u.get(j);
-                         //System.out.println("----------------------------------------------------------");
-                         //System.out.println("Courses offered at each Department : ");
-                         //System.out.println("University Name : "+u2.getUniversityName());
-                         for(College c1: u2.getCollegeDirectory().getCollegeList()) 
+                         System.out.println("----------------------------------------------------------");
+                         System.out.println("University Name : "+u2.getUniversityName());
+                     int facultySize = 0;
+                         for(College c1: u2.getCollegeDirectory().getCollegeList())
+                        {
+            
+                         for(Department d :c1.getDepartmentDirectory().getDepartmentList())
                          {
-                            // System.out.println("College Name : "+c1.getCollegeName());
-                             for(Department d :c1.getDepartmentDirectory().getDepartmentList())
-                             {
-                                 System.out.println("----------------------------------------------------------");
-                                 System.out.println("Department Name : "+d.getDepartmentName());
-                                 
-                                 for(Semester semester:d.getDepartmentCourseSchedule().getSemester())
-                                 {
-                                     System.out.println("Semester Name : " +semester.getSemesterName());
-                                     for(CourseOffering courseOffering:semester.getCourseOffering())
-                                     {
-                                         
-                                         for(Course course :courseOffering.getCourseList().getCourseCatalog())
-                                         {
-                                             System.out.println("Teacher Name : " +courseOffering.getTeacher().getPerson().getFirstName());
-                                                                                                                                                                                                                                                    
-                                             
-                                        }
-//                                         break;
-                                        
-                                     }
-                                 }
-                             }
+                             
+                             facultySize = facultySize + d.getJobPosition().size();
+                             
+                             
                          }
+                        System.out.println("Department Name :"+c1.getCollegeName()+"  ------ Faculty Student Ratio (College Level)- "+c1.getCollegeStudentDirectory().getStudentListCollege().size()+":"+facultySize);
+//                       
+                        }
                      }
-                     
-                  break;  
+                       
+                    break; 
                 }
                 case 5:
                  {
+                     int countAlumni=0;
+                    for(int i=0;i<u.size();i++)
+                    {
+                        University u1 = u.get(i);
+                        System.out.println("University Name : "+u1.getUniversityName());
+                        for(int j=0;j<u1.getUniversityStudentDirectory().getStudentList().size();j++){
+                            Student stud1 = u1.getUniversityStudentDirectory().getStudentList().get(j);
+                            if(stud1.getIsGraduated().equals("Yes")){
+                                countAlumni++;
+                            }
+                        }
+                        System.out.println("Alumni Count : " +countAlumni);
+                        
+                        
+                        System.out.println("----------------------------------------------------------");
+                    } 
+                    double avg=0;
+                    int ccni=0;
+                    for(int i=0;i<u.size();i++)
+                    {
+                        University u1 = u.get(i);
+                        System.out.println("University Name : "+u1.getUniversityName());
+                        for(int j=0;j<u1.getUniversityStudentDirectory().getStudentList().size();j++){
+                            Student stud1 = u1.getUniversityStudentDirectory().getStudentList().get(j);
+                            if(stud1.getIsGraduated().equals("Yes")){
+                                avg = avg+stud1.getYearsOfExperience();
+                                ccni++;
+                            }
+                        }
+                        System.out.println("Average Years of Experience : " +(avg/ccni));
+                        
+                        
+                        System.out.println("----------------------------------------------------------");
+                    } 
+                    int con=0;
+                    int countone=0;
+                    for(int i=0;i<u.size();i++)
+                    {
+                        University u1 = u.get(i);
+                        System.out.println("University Name : "+u1.getUniversityName());
+                        for(int j=0;j<u1.getUniversityStudentDirectory().getStudentList().size();j++){
+                            Student stud1 = u1.getUniversityStudentDirectory().getStudentList().get(j);
+                            if(stud1.getIsGraduated().equals("Yes")){
+                                countone++;
+                            if(stud1.getEmployedStatus().equalsIgnoreCase("Yes")){
+                                con++;
+                            }}
+                        }
+                        System.out.println("Details of Employment : "+"\nTotal Graduates :"+countone+"\nNumber of graduates currently employed :"+con);
+                        
+                        
+                        System.out.println("----------------------------------------------------------");
+                    }
+                    int l1=0,l2=0,l3=0,l4=0;
+                    for(int i=0;i<u.size();i++)
+                    {
+                        University u1 = u.get(i);
+                        System.out.println("University Name : "+u1.getUniversityName());
+                        for(int j=0;j<u1.getUniversityStudentDirectory().getStudentList().size();j++){
+                            Student stud1 = u1.getUniversityStudentDirectory().getStudentList().get(j);
+                            if(stud1.getIsGraduated().equals("Yes")){
+                                countone++;
+                            if(stud1.getEmployedStatus().equalsIgnoreCase("Yes")){
+                                if(stud1.getJobLevel()==1)
+                                {
+                                    l1++;
+                                }  
+                                if(stud1.getJobLevel()==2)
+                                {
+                                    l2++;
+                                } 
+                                if(stud1.getJobLevel()==3)
+                                {
+                                    l3++;
+                                } 
+                                if(stud1.getJobLevel()==4)
+                                {
+                                    l4++;
+                                } 
+                            }}
+                        }
+                        System.out.println("Details of Employment(w.r.t. Career Levels) : "+"\nLevel 1 Professionals :"+l1+"\nLevel 2 Professionals :"+l2+"\nLevel 3 Professionals :"+l3+"\nLevel 4 Professionals :"+l4);
+                        
+                        
+                        System.out.println("----------------------------------------------------------");
+                    }
+                     
                   break;  
                 }
                 case 6:
+                {
+                    System.out.println("Enter the Student Id to obtain the GPA of :");
+                    String studentId= s.next();
+                  for(int i =0;i<u.size();i++){
+                     University u1 = u.get(i);
+                    System.out.println("University Name :"+u1.getUniversityName());
+        
+                        
+                    for(Student s1: u1.getUniversityStudentDirectory().getStudentList())
+                    {
+                        if(s1.getStudentId().equals(studentId)){
+                        System.out.println("Student Id :"+s1.getStudentId());
+                        s1.getTranscript().getTranscript(s1);
+                        }
+                    }
+                  }
+                }
+                break;
+                case 7:
                      {
+                         System.exit(0);
                   break;  
                 }
                 default:

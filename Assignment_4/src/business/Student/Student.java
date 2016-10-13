@@ -22,7 +22,33 @@ public class Student {
     private Transcript transcript;
     private int admissionYear; 
     private int graduationYear;
-    
+    private String employedStatus;
+    private int jobLevel;
+
+    public int getJobLevel() {
+        return jobLevel;
+    }
+
+    public void setJobLevel(int jobLevel) {
+        this.jobLevel = jobLevel;
+    }
+
+    public String getEmployedStatus() {
+        return employedStatus;
+    }
+
+    public void setEmployedStatus(String employedStatus) {
+        this.employedStatus = employedStatus;
+    }
+
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+
+    public void setYearsOfExperience(int yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
+    private int yearsOfExperience;
 
     public int getGraduationYear() {
         return graduationYear;

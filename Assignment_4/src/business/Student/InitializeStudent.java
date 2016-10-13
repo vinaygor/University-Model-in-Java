@@ -6,7 +6,6 @@
 package business.Student;
 
 import business.college.Transcript;
-import static java.lang.String.valueOf;
 import java.util.ArrayList;
 import static java.lang.String.valueOf;
 
@@ -71,9 +70,10 @@ public class InitializeStudent {
         student5.setDepartmentId(deptId);
         student5.setTranscript(transcript);
         
-        if(student5.getIsGraduated().equals("Yes"))
-            alumni.setAlumni(student5);
-            
+        if(student5.getIsGraduated().equals("Yes")){
+            //Alumni a = new Alumni();
+            //a.setAlumn(student5);
+        }
         studentList.add(student5);
         
         Student student6 = new Student();
@@ -119,13 +119,18 @@ public class InitializeStudent {
         student1.setSemesterName("Spring");
         student1.setDepartmentId(deptId);
         student1.setTranscript(transcript);
-        
-        if(student1.getIsGraduated().equals("Yes"))
-            alumni.setAlumni(student1);
-        alumni.setJobLevel("1");
-        alumni.setEmployedStatus("Yes");
-        alumni.setYearsOfExperience(2016-(student1.getGraduationYear()));
+        student1.setEmployedStatus("Yes");
+        student1.setYearsOfExperience(2);
+        student1.setJobLevel(2);
+        if(student1.getIsGraduated().equals("Yes")){
+        Alumni alumni1 = new Alumni();
+        alumni1.setJobLevel("1");
+        //alumni1.setEmployedStatus("Yes");
+        //alumni1.setYearsOfExperience(2016-(student1.getGraduationYear()));
         alumniDirectory.addAlumni(alumni);
+        studentList.add(student1);
+        //alumni1.setUniversityId("2");
+        }
         
         break;
             case 2:
@@ -165,7 +170,7 @@ public class InitializeStudent {
         student4.getStudentData().getAddress().setState("MA");
         student4.getStudentData().getAddress().setPinNumber("321324");
         student4.setStudentId(valueOf(count1++));
-        student4.setIsGraduated("Yes");
+        student4.setIsGraduated("No");
         student4.setGraduationYear(2015);
         student4.setEmailAddress("vinaugor@gmail.com");
         
@@ -174,12 +179,16 @@ public class InitializeStudent {
         student4.setDepartmentId(deptId);
         student4.setTranscript(transcript);
         
-        if(student4.getIsGraduated().equals("Yes"))
-            alumni.setAlumni(student4);
-        alumni.setJobLevel("3");
-        alumni.setEmployedStatus("Yes");
-        alumni.setYearsOfExperience(2016-(student4.getGraduationYear()));
+        if(student4.getIsGraduated().equals("Yes")){
+         Alumni a1 = new Alumni();
+            //alumni.setAlumni(student4);
+        a1.setJobLevel("3");
+//        a1.setEmployedStatus("Yes");
+      //  a1.setYearsOfExperience(2016-(student4.getGraduationYear()));
          alumniDirectory.addAlumni(alumni);
+         //alumni.setUniversityId("2");
+        }
+        studentList.add(student4);
         
         Student student7 = new Student();
         student7.getStudentData().setFirstName("Vinay");
@@ -196,19 +205,24 @@ public class InitializeStudent {
         student7.setIsGraduated("Yes");
         student7.setGraduationYear(2015);
         student7.setEmailAddress("vinaugor@gmail.com");
-        
+        student7.setEmployedStatus("Yes");
+        student7.setYearsOfExperience(2);
+        student7.setJobLevel(1);
         student7.setAdmissionYear(2013);
         student7.setSemesterName("Fall");
         student7.setDepartmentId(deptId);
         student7.setTranscript(transcript);
-        Alumni a1 = new Alumni();
-        if(student7.getIsGraduated().equals("Yes"))
-          a1.setAlumni(student7);
-        a1.setJobLevel("2");
-        a1.setEmployedStatus("Yes");
-        a1.setYearsOfExperience(2016-(student7.getGraduationYear()));
-         alumniDirectory.addAlumni(a1);
+        studentList.add(student7);
         
+        if(student7.getIsGraduated().equals("Yes")){
+         Alumni a2 = new Alumni();
+            //a2.setAlumni(student7);
+        a2.setJobLevel("2");
+//        a2.setEmployedStatus("No");
+     //   a2.setYearsOfExperience(2016-(student7.getGraduationYear()));
+         alumniDirectory.addAlumni(a2);
+         //a1.setUniversityId("1");
+        }
         Student student8 = new Student();
         student8.getStudentData().setFirstName("Vinay");
         student8.getStudentData().setLastName("Gor");
@@ -224,20 +238,24 @@ public class InitializeStudent {
         student8.setIsGraduated("Yes");
         student8.setGraduationYear(2015);
         student8.setEmailAddress("vinaugor@gmail.com");
-        
+        student8.setEmployedStatus("No");
+        student8.setYearsOfExperience(2);
         student8.setAdmissionYear(2014);
         student8.setSemesterName("Fall");
         student8.setDepartmentId(deptId);
         student8.setTranscript(transcript);
-       
-        Alumni a2=new Alumni();
-        if(student8.getIsGraduated().equals("Yes"))
-           a2.setAlumni(student8);
-        a2.setJobLevel("1");
-        a2.setEmployedStatus("Yes");
-        a2.setYearsOfExperience(2016-(student8.getGraduationYear()));
-         alumniDirectory.addAlumni(a2);
-            
+        student8.setJobLevel(3);
+
+        if(student8.getIsGraduated().equals("Yes")){
+                 Alumni a3=new Alumni();
+            //a2.setAlumni(student8);
+        a3.setJobLevel("1");
+//        a3.setEmployedStatus("Yes");
+   //     a3.setYearsOfExperience(2016-(student8.getGraduationYear()));
+        //a2.setUniversityId("1");
+         alumniDirectory.addAlumni(a3);
+        }
+        studentList.add(student8);
         }
         return studentList;
 //        DepartmentStudentDirectory departmentStudentDirectory = new DepartmentStudentDirectory();

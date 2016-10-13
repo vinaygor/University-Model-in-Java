@@ -11,10 +11,19 @@ package business.Student;
  */
 public class Alumni {
     
-    private String employedStatus;
-    private int yearsOfExperience;
+    
     private String jobLevel;
+    private String universityId;
 
+    public String getUniversityId() {
+        return universityId;
+    }
+
+    public void setUniversityId(String universityId) {
+        this.universityId = universityId;
+    }
+    
+    
     public String getJobLevel() {
         return jobLevel;
     }
@@ -23,37 +32,14 @@ public class Alumni {
         this.jobLevel = jobLevel;
     }
 
-    public int getYearsOfExperience() {
-        return yearsOfExperience;
-    }
-
-    public void setYearsOfExperience(int yearsOfExperience) {
-        this.yearsOfExperience = yearsOfExperience;
-    }
+   
     
-    private Student alumni;
-
-    public Student getAlumni() {
-        return alumni;
-    }
-
-    public void setAlumni(Student alumni) {
-        this.alumni = alumni;
-    }
     
 
-  
-    public Alumni(){
-        alumni = new Student();
-    }
-    public String getEmployedStatus() {
-        return employedStatus;
-        
-    }
+    
 
-    public void setEmployedStatus(String employedStatus) {
-        this.employedStatus = employedStatus;
-    }
+    
+
     
     
 }

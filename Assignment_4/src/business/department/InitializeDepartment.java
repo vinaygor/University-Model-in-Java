@@ -232,7 +232,7 @@ public class InitializeDepartment {
         teacher1.getPerson().getAddress().setStreet2("Clearway");
         teacher1.getPerson().getAddress().setState("MA");
         teacher1.getPerson().getAddress().setPinNumber("32132");
-        teacher1.setEducationQualification("Phd");
+        teacher1.setEducationQualification("MS");
         teacher1.setExperience("20");
         jp.getTeacherdirectory().add(teacher1);
         //teacherDirectory.addTeacher(teacher1);
@@ -285,7 +285,7 @@ public class InitializeDepartment {
         teacher4.getPerson().getAddress().setStreet2("Clearway");
         teacher4.getPerson().getAddress().setState("MA");
         teacher4.getPerson().getAddress().setPinNumber("32132");
-        teacher4.setEducationQualification("Phd");
+        teacher4.setEducationQualification("MS");
         teacher4.setExperience("20");
         jp.getTeacherdirectory().add(teacher4);
         
@@ -355,7 +355,7 @@ public class InitializeDepartment {
         teacher3.getPerson().getAddress().setStreet2("Mass Ave");
         teacher3.getPerson().getAddress().setState("MA");
         teacher3.getPerson().getAddress().setPinNumber("32132");
-        teacher3.setEducationQualification("Phd");
+        teacher3.setEducationQualification("MS");
         teacher3.setExperience("20");
         jp1.getTeacherdirectory().add(teacher3);
         //teacherDirectory1.addTeacher(teacher3);
@@ -390,7 +390,7 @@ public class InitializeDepartment {
         teacher31.getPerson().getAddress().setStreet2("Clearway");
         teacher31.getPerson().getAddress().setState("MA");
         teacher31.getPerson().getAddress().setPinNumber("32132");
-        teacher31.setEducationQualification("PHD");
+        teacher31.setEducationQualification("MS");
         teacher31.setExperience("15");
         jp1.getTeacherdirectory().add(teacher31);
         

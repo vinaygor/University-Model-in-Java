@@ -5,6 +5,7 @@
  */
 package business.Student;
 
+import business.university.University;
 import java.util.ArrayList;
 
 /**
@@ -25,6 +26,15 @@ public class AlumniDirectory {
         
         alumniList.add(a);
         return a;
+        
+    }
+
+    public ArrayList<Alumni> getAlumniList() {
+        return alumniList;
+    }
+
+    public void setAlumniList(ArrayList<Alumni> alumniList) {
+        this.alumniList = alumniList;
     }
     
     

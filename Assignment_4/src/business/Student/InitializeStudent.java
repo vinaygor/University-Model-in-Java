@@ -5,6 +5,7 @@
  */
 package business.Student;
 
+import business.college.Transcript;
 import static java.lang.String.valueOf;
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ public class InitializeStudent {
     
     public static int count1=1;
     
-    public ArrayList<Student> intializeStudentDetails(String deptId)
+    public ArrayList<Student> intializeStudentDetails(String deptId,Transcript transcript)
     {
         //UniversityStudentDirectory universityStudentDirectory = new UniversityStudentDirectory();
         
@@ -35,9 +36,11 @@ public class InitializeStudent {
         student.setStudentId(valueOf(count1++));
         student.setIsGraduated("No");
         student.setEmailAddress("vinaugor@gmail.com");
+        
         student.setAdmissionYear(2014);
         student.setSemesterName("Fall");
         student.setDepartmentId(deptId);
+        student.setTranscript(transcript);
         
         
         studentList.add(student);

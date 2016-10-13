@@ -62,6 +62,7 @@ public class CourseLoad {
             ArrayList<CourseOffering> co = semester.get(i).getCourseOffering();
                 for(int j =0;j<co.size();j++)
                 {
+                    System.out.println("Values "+co.get(j).getCourseList());
                 if(co.get(j).getCourseList().getDepartmentId().equals(departmentId))
                         {
                             c1 = co.get(j).getCourseList().getCourseCatalog().get(0).getCourseId();

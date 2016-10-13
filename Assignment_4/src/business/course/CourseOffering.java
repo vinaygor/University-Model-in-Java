@@ -22,7 +22,15 @@ public class CourseOffering {
     private Teacher teacher;
     private ClassRoom classRoom;
     private int numberOfSeats;
-   
+    private String deptId;
+
+    public String getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(String deptId) {
+        this.deptId = deptId;
+    }
 
     public CourseOffering() {
       //  this.semester = new Semester();
@@ -41,11 +49,14 @@ public class CourseOffering {
 //    }
 
     public DepartmentCourseCatalog getCourseList() {
+        
         return courseList;
+        
     }
 
     public void setCourseList(DepartmentCourseCatalog courseList) {
         this.courseList = courseList;
+        //this.courseList.setDepartmentId(deptId);
     }
 
     public Teacher getTeacher() {

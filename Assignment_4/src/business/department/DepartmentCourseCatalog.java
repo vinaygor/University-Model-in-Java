@@ -35,7 +35,7 @@ public class DepartmentCourseCatalog {
         courseCatalog.add(c);
         return c;
     }
-public String getDepartmentId() {
+    public String getDepartmentId() {
         return departmentId;
     }
 

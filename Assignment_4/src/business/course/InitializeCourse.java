@@ -7,6 +7,8 @@ package business.course;
 
 import business.InitializeSemester;
 import business.Semester;
+import business.Student.InitializeStudent;
+import business.Student.Student;
 import business.college.ClassRoom;
 import business.college.Transcript;
 import business.department.Department;
@@ -26,6 +28,7 @@ public class InitializeCourse {
     private ArrayList<TeacherDirectory> td;
     private InitializeSemester initializeSemester;
     private ArrayList<DepartmentCourseCatalog> departmentCourseCatalog;
+    private InitializeStudent initializeStudent; 
     private static int roomNo=1;
     private static int buildingNo=100;
     int i=1;
@@ -34,6 +37,7 @@ public class InitializeCourse {
         initializeSemester = new InitializeSemester();
         departmentCourseCatalog= new ArrayList<DepartmentCourseCatalog>();
         td = new ArrayList<TeacherDirectory>();
+        initializeStudent = new InitializeStudent();
     }
     public ArrayList<Course> initializeCourse(int number){
         
@@ -120,7 +124,7 @@ public class InitializeCourse {
         ArrayList<CourseOffering> courseOffering = new ArrayList<CourseOffering>();
         ArrayList<Semester> semesterList = initializeSemester.initializeSemester();
         ArrayList<SeatAssignment> seatAssignmentList = new ArrayList<SeatAssignment>();
-        
+        DepartmentCourseCatalog dcc = d.getDepartmentCourseCatalog();
        for (int k=0;k<d.getDepartmentCourseCatalog().getCourseCatalog().size();k++)
       {
         for(int i=0; i<semesterList.size();i++)
@@ -130,14 +134,21 @@ public class InitializeCourse {
            // courseOffering1.setSemester(s);
           // System.out.println(" " +s.getSemesterName());
             ArrayList<Course> tempDept=d.getDepartmentCourseCatalog().getCourseCatalog();
+            DepartmentCourseCatalog dc1 = new DepartmentCourseCatalog();
+            
             //System.out.println("Teacher di size"+td.size());
             if(s.getSemesterName().equals("Fall"))
             for(int j=0;j<2;j++)
             { 
+                
                 Course c = tempDept.get(j);
-                courseOffering1.getCourseList().addCourse(c);
+                dc1.addCourse(c);
+                dc1.setDepartmentId(d.getDepartmentId());
+               // courseOffering1.setDeptId(d.getDepartmentId());
+                courseOffering1.setCourseList(dc1);                
                 ClassRoom classRoom=initializeClassRoom();
                 courseOffering1.setClassRoom(classRoom);
+                //courseOffering1.setCourseList(dcc);
                 courseOffering1.setTeacher(d.getJobPosition().get(0).getTeacherdirectory().get(j));
                 courseOffering1.setNumberOfSeats(50);
                 courseOffering.add(courseOffering1);
@@ -148,9 +159,14 @@ public class InitializeCourse {
             { 
                  Course c= tempDept.get(j);
                  int a=0;
-                courseOffering1.getCourseList().addCourse(c);
+                 dc1.addCourse(c);
+                dc1.setDepartmentId(d.getDepartmentId());
+               // courseOffering1.setDeptId(d.getDepartmentId());
+                courseOffering1.setCourseList(dc1); 
+               // courseOffering1.getCourseList().addCourse(c);
                 ClassRoom classRoom=initializeClassRoom();
                 courseOffering1.setClassRoom(classRoom);
+                //courseOffering1.setCourseList(dcc);
                 courseOffering1.setTeacher(d.getJobPosition().get(0).getTeacherdirectory().get(a));
                 courseOffering1.setNumberOfSeats(50);
                 courseOffering.add(courseOffering1);
@@ -160,9 +176,14 @@ public class InitializeCourse {
                 for(int j=0;j<2;j++)
             { 
                  Course c= tempDept.get(j);
-                courseOffering1.getCourseList().addCourse(c);
+                 dc1.addCourse(c);
+                dc1.setDepartmentId(d.getDepartmentId());
+               // courseOffering1.setDeptId(d.getDepartmentId());
+                courseOffering1.setCourseList(dc1); 
+              //  courseOffering1.getCourseList().addCourse(c);
                 ClassRoom classRoom=initializeClassRoom();
                 courseOffering1.setClassRoom(classRoom);
+                //courseOffering1.setCourseList(dcc);
                 courseOffering1.setTeacher(d.getJobPosition().get(0).getTeacherdirectory().get(j));
                 courseOffering1.setNumberOfSeats(50);
                 courseOffering.add(courseOffering1);
@@ -172,10 +193,11 @@ public class InitializeCourse {
             s.setCourseOffering(courseOffering);   
             SeatAssignment seatAssignment = initializeSeatAssignment(seat1);
             seatAssignmentList.add(seatAssignment);
-            
+            System.out.println(" Seat Ass "+seatAssignmentList.size() + " Sem list "+semesterList.size());
         }
       }
-       initializeCourseLoad(semesterList, seatAssignmentList);
+        
+       initializeCourseLoad(semesterList, seatAssignmentList,d);
        
 //       for(int b=0;b<courseOffering.size();b++)
 //       {
@@ -236,12 +258,19 @@ public class InitializeCourse {
         return seatAssignment;
     }
     
-    public void initializeCourseLoad(ArrayList<Semester> semester, ArrayList<SeatAssignment> seatAssignment){
+    public void initializeCourseLoad(ArrayList<Semester> semester, ArrayList<SeatAssignment> seatAssignment,Department d1){
         CourseLoad courseLoad = new CourseLoad();
         courseLoad.setSemester(semester);
         courseLoad.setSeatAssignment(seatAssignment);
         Transcript transcript = new Transcript();
         transcript.setCourseLoad(courseLoad);
+        
+        ArrayList<Student> s = initializeStudent.intializeStudentDetails(d1.getDepartmentId(),transcript);
+        for(int i=0;i<s.size();i++)
+        {   Student s1 = s.get(i);
+            d1.getDepartmentStudentDirectory().addDepartmentStudent(s1);
+        }
+        //System.out.println("Semester size" +transcript.getCourseLoad().getSemester().size());
         //transcript.getTranscript(student);
 //        int count=0;
 ////        int count1=0;

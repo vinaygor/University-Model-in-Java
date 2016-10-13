@@ -5,8 +5,6 @@
  */
 package business.Student;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author ayush
@@ -14,18 +12,39 @@ import java.util.ArrayList;
 public class Alumni {
     
     private String employedStatus;
-    private ArrayList<Student> alumniList;
+    private int yearsOfExperience;
+    private String jobLevel;
 
-    public ArrayList<Student> getAlumniList() {
-        return alumniList;
+    public String getJobLevel() {
+        return jobLevel;
     }
 
-    public void setAlumniList(ArrayList<Student> alumniList) {
-        this.alumniList = alumniList;
+    public void setJobLevel(String jobLevel) {
+        this.jobLevel = jobLevel;
     }
 
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+
+    public void setYearsOfExperience(int yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
+    
+    private Student alumni;
+
+    public Student getAlumni() {
+        return alumni;
+    }
+
+    public void setAlumni(Student alumni) {
+        this.alumni = alumni;
+    }
+    
+
+  
     public Alumni(){
-        alumniList = new ArrayList<Student>();
+        alumni = new Student();
     }
     public String getEmployedStatus() {
         return employedStatus;

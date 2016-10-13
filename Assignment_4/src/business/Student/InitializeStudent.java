@@ -22,6 +22,7 @@ public class InitializeStudent {
     {
         //UniversityStudentDirectory universityStudentDirectory = new UniversityStudentDirectory();
         Alumni alumni = new Alumni();
+        AlumniDirectory alumniDirectory = new AlumniDirectory();
         ArrayList<Student> studentList = new ArrayList<Student>();
         switch(number){
             
@@ -47,10 +48,56 @@ public class InitializeStudent {
         student.setDepartmentId(deptId);
         student.setTranscript(transcript);
         
-        if(student.getIsGraduated().equals("Yes"))
-            alumni.getAlumniList().add(student);
+
         studentList.add(student);
         
+        Student student5 = new Student();
+        student5.getStudentData().setFirstName("Vinay");
+        student5.getStudentData().setLastName("Gor");
+        student5.getStudentData().setPersonID("123");
+        student5.getStudentData().setGender("Male");
+        student5.getStudentData().setDateOfBirth("123");
+        student5.getStudentData().getAddress().setCity("Boston");
+        student5.getStudentData().getAddress().setStreet1("Saint Germain");
+        student5.getStudentData().getAddress().setStreet2("Clearway");
+        student5.getStudentData().getAddress().setState("MA");
+        student5.getStudentData().getAddress().setPinNumber("321324");
+        student5.setStudentId(valueOf(count1++));
+        student5.setIsGraduated("No");
+        student5.setEmailAddress("vinaugor@gmail.com");
+        
+        student5.setAdmissionYear(2014);
+        student5.setSemesterName("Fall");
+        student5.setDepartmentId(deptId);
+        student5.setTranscript(transcript);
+        
+        if(student5.getIsGraduated().equals("Yes"))
+            alumni.setAlumni(student5);
+            
+        studentList.add(student5);
+        
+        Student student6 = new Student();
+        student6.getStudentData().setFirstName("Vinay");
+        student6.getStudentData().setLastName("Gor");
+        student6.getStudentData().setPersonID("123");
+        student6.getStudentData().setGender("Male");
+        student6.getStudentData().setDateOfBirth("123");
+        student6.getStudentData().getAddress().setCity("Boston");
+        student6.getStudentData().getAddress().setStreet1("Saint Germain");
+        student6.getStudentData().getAddress().setStreet2("Clearway");
+        student6.getStudentData().getAddress().setState("MA");
+        student6.getStudentData().getAddress().setPinNumber("321324");
+        student6.setStudentId(valueOf(count1++));
+        student6.setIsGraduated("No");
+        student6.setEmailAddress("vinaugor@gmail.com");
+        
+        student6.setAdmissionYear(2014);
+        student6.setSemesterName("Fall");
+        student6.setDepartmentId(deptId);
+        student6.setTranscript(transcript);
+        
+        
+        studentList.add(student6);
         
         Student student1 = new Student();
         student1.getStudentData().setFirstName("Vinay");
@@ -64,17 +111,22 @@ public class InitializeStudent {
         student1.getStudentData().getAddress().setState("MA");
         student1.getStudentData().getAddress().setPinNumber("321324");
         student1.setStudentId(valueOf(count1++));
-        student1.setIsGraduated("No");
+        student1.setIsGraduated("Yes");
         student1.setEmailAddress("vinaugor@gmail.com");
         
+        student1.setGraduationYear(2014);
         student1.setAdmissionYear(2014);
         student1.setSemesterName("Spring");
         student1.setDepartmentId(deptId);
         student1.setTranscript(transcript);
         
         if(student1.getIsGraduated().equals("Yes"))
-            alumni.getAlumniList().add(student1);
-        studentList.add(student1);
+            alumni.setAlumni(student1);
+        alumni.setJobLevel("1");
+        alumni.setEmployedStatus("Yes");
+        alumni.setYearsOfExperience(2016-(student1.getGraduationYear()));
+        alumniDirectory.addAlumni(alumni);
+        
         break;
             case 2:
         Student student2 = new Student();
@@ -97,8 +149,7 @@ public class InitializeStudent {
         student2.setDepartmentId(deptId);
         student2.setTranscript(transcript);
         
-        if(student2.getIsGraduated().equals("Yes"))
-            alumni.getAlumniList().add(student2);
+        
         studentList.add(student2);
         
         
@@ -114,18 +165,78 @@ public class InitializeStudent {
         student4.getStudentData().getAddress().setState("MA");
         student4.getStudentData().getAddress().setPinNumber("321324");
         student4.setStudentId(valueOf(count1++));
-        student4.setIsGraduated("No");
+        student4.setIsGraduated("Yes");
+        student4.setGraduationYear(2015);
         student4.setEmailAddress("vinaugor@gmail.com");
         
-        student4.setAdmissionYear(2014);
-        student4.setSemesterName("Spring");
+        student4.setAdmissionYear(2012);
+        student4.setSemesterName("Fall");
         student4.setDepartmentId(deptId);
         student4.setTranscript(transcript);
         
         if(student4.getIsGraduated().equals("Yes"))
-            alumni.getAlumniList().add(student4);
-        studentList.add(student4);
+            alumni.setAlumni(student4);
+        alumni.setJobLevel("3");
+        alumni.setEmployedStatus("Yes");
+        alumni.setYearsOfExperience(2016-(student4.getGraduationYear()));
+         alumniDirectory.addAlumni(alumni);
         
+        Student student7 = new Student();
+        student7.getStudentData().setFirstName("Vinay");
+        student7.getStudentData().setLastName("Gor");
+        student7.getStudentData().setPersonID("123");
+        student7.getStudentData().setGender("Male");
+        student7.getStudentData().setDateOfBirth("123");
+        student7.getStudentData().getAddress().setCity("Boston");
+        student7.getStudentData().getAddress().setStreet1("Saint Germain");
+        student7.getStudentData().getAddress().setStreet2("Clearway");
+        student7.getStudentData().getAddress().setState("MA");
+        student7.getStudentData().getAddress().setPinNumber("321324");
+        student7.setStudentId(valueOf(count1++));
+        student7.setIsGraduated("Yes");
+        student7.setGraduationYear(2015);
+        student7.setEmailAddress("vinaugor@gmail.com");
+        
+        student7.setAdmissionYear(2013);
+        student7.setSemesterName("Fall");
+        student7.setDepartmentId(deptId);
+        student7.setTranscript(transcript);
+        Alumni a1 = new Alumni();
+        if(student7.getIsGraduated().equals("Yes"))
+          a1.setAlumni(student7);
+        a1.setJobLevel("2");
+        a1.setEmployedStatus("Yes");
+        a1.setYearsOfExperience(2016-(student7.getGraduationYear()));
+         alumniDirectory.addAlumni(a1);
+        
+        Student student8 = new Student();
+        student8.getStudentData().setFirstName("Vinay");
+        student8.getStudentData().setLastName("Gor");
+        student8.getStudentData().setPersonID("123");
+        student8.getStudentData().setGender("Male");
+        student8.getStudentData().setDateOfBirth("123");
+        student8.getStudentData().getAddress().setCity("Boston");
+        student8.getStudentData().getAddress().setStreet1("Saint Germain");
+        student8.getStudentData().getAddress().setStreet2("Clearway");
+        student8.getStudentData().getAddress().setState("MA");
+        student8.getStudentData().getAddress().setPinNumber("321324");
+        student8.setStudentId(valueOf(count1++));
+        student8.setIsGraduated("Yes");
+        student8.setGraduationYear(2015);
+        student8.setEmailAddress("vinaugor@gmail.com");
+        
+        student8.setAdmissionYear(2014);
+        student8.setSemesterName("Fall");
+        student8.setDepartmentId(deptId);
+        student8.setTranscript(transcript);
+       
+        Alumni a2=new Alumni();
+        if(student8.getIsGraduated().equals("Yes"))
+           a2.setAlumni(student8);
+        a2.setJobLevel("1");
+        a2.setEmployedStatus("Yes");
+        a2.setYearsOfExperience(2016-(student8.getGraduationYear()));
+         alumniDirectory.addAlumni(a2);
             
         }
         return studentList;

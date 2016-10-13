@@ -21,6 +21,16 @@ public class Student {
     private StudentAccount studentAccount;
     private Transcript transcript;
     private int admissionYear; 
+    private int graduationYear;
+    
+
+    public int getGraduationYear() {
+        return graduationYear;
+    }
+
+    public void setGraduationYear(int graduationYear) {
+        this.graduationYear = graduationYear;
+    }
     private String semesterName;
     private String departmentId;
     

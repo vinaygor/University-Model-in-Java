@@ -95,6 +95,14 @@ public class InitializeCourse {
         course5.setPrerequisiteCourse("None");
         courseCatalog1.add(course5);
         
+        Course course12 = new Course();
+        course12.setCourseId(valueOf(count++));
+        course12.setCourseName("OOPS");
+        course12.setCourseType("Elective");
+        course12.setFollowUpCourse("None");
+        course12.setPrerequisiteCourse("None");
+        courseCatalog1.add(course12);
+        
         return courseCatalog1;
         
         case 2:
@@ -147,6 +155,14 @@ public class InitializeCourse {
         course11.setFollowUpCourse("None");
         course11.setPrerequisiteCourse("None");
         courseCatalog2.add(course11);
+        
+        Course course14 = new Course();
+        course14.setCourseId(valueOf(count++));
+        course14.setCourseName("OOPS");
+        course14.setCourseType("Elective");
+        course14.setFollowUpCourse("None");
+        course14.setPrerequisiteCourse("None");
+        courseCatalog2.add(course14);
         
         
         return courseCatalog2;

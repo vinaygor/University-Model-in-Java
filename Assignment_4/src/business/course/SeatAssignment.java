@@ -19,6 +19,15 @@ public class SeatAssignment {
    private String gpa;
    Map seatCount = new HashMap();
 
+    public Map getSeatCount() {
+        return seatCount;
+    }
+
+//    public void setSeatCount(Map seatCount) {
+//        this.seatCount = seatCount;
+//    }
+   
+
     public Seat getSeat() {
         return seat;
     }

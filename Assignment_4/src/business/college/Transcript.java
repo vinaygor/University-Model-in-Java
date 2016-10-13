@@ -39,13 +39,32 @@ public class Transcript {
         Iterator<Map.Entry> entries = transcript.entrySet().iterator();
         while(entries.hasNext()){
             Map.Entry entry = entries.next();
-            System.out.println("Course Id = "+entry.getKey()+ ", Grade = "+entry.getValue());
+            //System.out.println("Course Id = "+entry.getKey()+ ", Grade = "+entry.getValue());
             totalgrade=Double.parseDouble(entry.getValue().toString()) + totalgrade;
             totalcourse++;
         }
-        System.out.println("Total GPA of the Student is :"+(totalgrade/totalcourse));
+        //System.out.println("Total GPA of the Student is :"+(totalgrade/totalcourse));
        // System.out.println("Transcript Size" +transcript.size());
         
+    }
+    
+    public int getSeatCount(Student s){
+        int totalSeatLeft=0;
+        int totalCourses = 0;
+        for(int i=0;i<this.courseLoad.getSeatAssignment().size();i++){
+        Map transcript = this.courseLoad.getSeatAssignment().get(i).getSeatCount();
+        Iterator<Map.Entry> entries = transcript.entrySet().iterator();
+        while(entries.hasNext()){
+            Map.Entry entry = entries.next();
+            //System.out.println("Course Id = "+entry.getKey()+ ", Grade = "+entry.getValue());
+            totalSeatLeft=Integer.parseInt(entry.getValue().toString()) + totalSeatLeft;
+            totalCourses++;
+        }
+        }
+        
+        
+        
+        return totalSeatLeft;
     }
     
 }

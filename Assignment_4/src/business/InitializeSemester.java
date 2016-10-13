@@ -28,12 +28,6 @@ public ArrayList<Semester> initializeSemester(){
     }
     
     for(int i = 0; i<1; i++){
-    Semester sem = new Semester();
-    sem.setSemesterName("Fall");
-    sem.getCalenderYear().setYear(calenderList.get(i).getYear());
-    sem.getDateInfo().setStartDate("August");
-    sem.getDateInfo().setEndDate("December");
-    semesterList.add(sem);
     
     Semester sem1 = new Semester();
     sem1.setSemesterName("Spring");
@@ -48,6 +42,13 @@ public ArrayList<Semester> initializeSemester(){
     sem2.getDateInfo().setStartDate("May");
     sem2.getDateInfo().setEndDate("August");
     semesterList.add(sem2);
+    
+    Semester sem = new Semester();
+    sem.setSemesterName("Fall");
+    sem.getCalenderYear().setYear(calenderList.get(i).getYear());
+    sem.getDateInfo().setStartDate("August");
+    sem.getDateInfo().setEndDate("December");
+    semesterList.add(sem);
     
     
     }

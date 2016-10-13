@@ -5,6 +5,7 @@
  */
 package business.Student;
 
+import static java.lang.String.valueOf;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +14,9 @@ import java.util.ArrayList;
  */
 public class InitializeStudent {
     
-    public ArrayList<Student> intializeStudentDetails()
+    public static int count1=1;
+    
+    public ArrayList<Student> intializeStudentDetails(String deptId)
     {
         //UniversityStudentDirectory universityStudentDirectory = new UniversityStudentDirectory();
         
@@ -29,9 +32,13 @@ public class InitializeStudent {
         student.getStudentData().getAddress().setStreet2("Clearway");
         student.getStudentData().getAddress().setState("MA");
         student.getStudentData().getAddress().setPinNumber("321324");
-        student.setStudentId("23123");
+        student.setStudentId(valueOf(count1++));
         student.setIsGraduated("No");
         student.setEmailAddress("vinaugor@gmail.com");
+        student.setAdmissionYear(2014);
+        student.setSemesterName("Fall");
+        student.setDepartmentId(deptId);
+        
         
         studentList.add(student);
         
@@ -47,9 +54,13 @@ public class InitializeStudent {
         student1.getStudentData().getAddress().setStreet2("Clearway");
         student1.getStudentData().getAddress().setState("MA");
         student1.getStudentData().getAddress().setPinNumber("321324");
-        student1.setStudentId("4546123");
+        student1.setStudentId(valueOf(count1++));
         student1.setIsGraduated("No");
         student1.setEmailAddress("vinaugor@gmail.com");
+        
+        student.setAdmissionYear(2014);
+        student.setSemesterName("Spring");
+        student.setDepartmentId(deptId);
         
         studentList.add(student1);
         

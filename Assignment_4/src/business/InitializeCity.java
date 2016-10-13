@@ -5,6 +5,7 @@
  */
 package business;
 
+import business.Student.Student;
 import business.college.College;
 import business.course.Course;
 import business.course.CourseOffering;
@@ -30,9 +31,14 @@ public class InitializeCity {
         int count=0;
         for(int i =0;i<u.size();i++){
            University u1 = u.get(i);
-            System.out.println(" University "+u1.getUniversityName()+" "+u1.getUniversityStudentDirectory().getStudentList().size());
+          //  System.out.println(" University "+u1.getUniversityName()+" "+u1.getUniversityStudentDirectory().getStudentList().size());
         
-           System.out.println("University Name :"+u1.getUniversityName());
+        //   System.out.println("University Name :"+u1.getUniversityName());
+        for(Student s1: u1.getUniversityStudentDirectory().getStudentList())
+        {
+            s1.getTranscript().getTranscript(s1);
+            break;
+        }
         for(College c1: u1.getCollegeDirectory().getCollegeList())
         {
             //System.out.println("College Name :"+c1.getCollegeName());
@@ -84,6 +90,6 @@ public class InitializeCity {
         }
             
         }
-        System.out.println("Count students of AED : "+count);
+      //  System.out.println("Count students of AED : "+count);
     }
 }

@@ -11,6 +11,7 @@ import business.Student.Student;
 import business.course.Course;
 import business.course.CourseOffering;
 import business.course.InitializeCourse;
+import static java.lang.String.valueOf;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class InitializeDepartment {
     private InitializeStudent initializeStudent;
     private InitializeCourse initializeCourse;
+    public static int count2=1;
    
     public InitializeDepartment(){
         initializeStudent = new InitializeStudent();
@@ -34,9 +36,10 @@ public class InitializeDepartment {
         ArrayList<Department> department = new ArrayList<Department>();
         Department d1 = new Department();
         d1.setDepartmentName("IS");
-        d1.setDepartmentId("1");
+        d1.setDepartmentId(valueOf(count2++));
         ArrayList<Course> deptCourseCatalog1 = initializeCourse.initializeCourse(1);
-        ArrayList<Student> s = initializeStudent.intializeStudentDetails();
+        
+        ArrayList<Student> s = initializeStudent.intializeStudentDetails(d1.getDepartmentId());
         for(int i=0;i<s.size();i++)
         {   Student s1 = s.get(i);
             d1.getDepartmentStudentDirectory().addDepartmentStudent(s1);
@@ -44,7 +47,9 @@ public class InitializeDepartment {
         for(int i=0;i<deptCourseCatalog1.size();i++)
         {   Course course1 = deptCourseCatalog1.get(i);
             d1.getDepartmentCourseCatalog().addCourse(course1);
+            
         }
+        d1.getDepartmentCourseCatalog().setDepartmentId(d1.getDepartmentId());
         
         ArrayList<JobPosition> jobPosition = initializeTeacher(1);
         //initializeCourse.getDepartmentCourseCatalog(d1.getDepartmentCourseCatalog());
@@ -52,14 +57,17 @@ public class InitializeDepartment {
         d1.setJobPosition(jobPosition);
         ArrayList<Semester> semester1 =initializeCourse.initializeCourseOffering(d1);
         DepartmentCourseSchedule dcs1=initializeDepartCourseSchedule(semester1);
+        
         d1.setDepartmentCourseSchedule(dcs1);
+        
+        
         department.add(d1);
         
         Department d2 = new Department();
         d2.setDepartmentName("EM");
-        d2.setDepartmentId("2");
+        d2.setDepartmentId(valueOf(count2++));
         ArrayList<Course> deptCourseCatalog2 = initializeCourse.initializeCourse(2);
-        ArrayList<Student> s2 = initializeStudent.intializeStudentDetails();
+        ArrayList<Student> s2 = initializeStudent.intializeStudentDetails(d2.getDepartmentId());
         for(int i=0;i<s2.size();i++)
         {   Student s1 = s2.get(i);
             d2.getDepartmentStudentDirectory().addDepartmentStudent(s1);
@@ -68,7 +76,7 @@ public class InitializeDepartment {
         {   Course course2 = deptCourseCatalog2.get(i);
             d2.getDepartmentCourseCatalog().addCourse(course2);
         }
-        
+        d2.getDepartmentCourseCatalog().setDepartmentId(d2.getDepartmentId());
         ArrayList<JobPosition> jobPosition1 = initializeTeacher(2);
         //initializeCourse.getDepartmentCourseCatalog(d2.getDepartmentCourseCatalog());
         //initializeCourse.getTeacherCatalog(teacherDirectory2);
@@ -84,9 +92,9 @@ public class InitializeDepartment {
         ArrayList<Department> department2 = new ArrayList<Department>();
         Department d3 = new Department();
         d3.setDepartmentName("IS");
-        d3.setDepartmentId("3");
+        d3.setDepartmentId(valueOf(count2++));
         ArrayList<Course> deptCourseCatalog3 = initializeCourse.initializeCourse(2);
-        ArrayList<Student> s3 = initializeStudent.intializeStudentDetails();
+        ArrayList<Student> s3 = initializeStudent.intializeStudentDetails(d3.getDepartmentId());
         for(int i=0;i<s3.size();i++)
         {   Student s1 = s3.get(i);
             d3.getDepartmentStudentDirectory().addDepartmentStudent(s1);
@@ -95,7 +103,7 @@ public class InitializeDepartment {
         {   Course course2 = deptCourseCatalog3.get(i);
             d3.getDepartmentCourseCatalog().addCourse(course2);
         }
-        
+        d3.getDepartmentCourseCatalog().setDepartmentId(d3.getDepartmentId());
         ArrayList<JobPosition> jobPosition2 = initializeTeacher(1);
         //initializeCourse.getDepartmentCourseCatalog(d3.getDepartmentCourseCatalog());
         //initializeCourse.getTeacherCatalog(teacherDirectory3);
@@ -107,9 +115,9 @@ public class InitializeDepartment {
         
         Department d4 = new Department();
         d4.setDepartmentName("EM");
-        d4.setDepartmentId("4");
+        d4.setDepartmentId(valueOf(count2++));
         ArrayList<Course> deptCourseCatalog4 = initializeCourse.initializeCourse(2);
-        ArrayList<Student> s4 = initializeStudent.intializeStudentDetails();
+        ArrayList<Student> s4 = initializeStudent.intializeStudentDetails(d4.getDepartmentId());
         for(int i=0;i<s4.size();i++)
         {   Student s1 = s4.get(i);
             d4.getDepartmentStudentDirectory().addDepartmentStudent(s1);
@@ -119,7 +127,7 @@ public class InitializeDepartment {
             d4.getDepartmentCourseCatalog().addCourse(course2);
         }
         
-        
+        d4.getDepartmentCourseCatalog().setDepartmentId(d4.getDepartmentId());
         ArrayList<JobPosition> jobPosition3 = initializeTeacher(2);
         //initializeCourse.getDepartmentCourseCatalog(d4.getDepartmentCourseCatalog());
         //initializeCourse.getTeacherCatalog(teacherDirectory4);
@@ -132,9 +140,9 @@ public class InitializeDepartment {
         
         Department d5 = new Department();
         d5.setDepartmentName("TSM");
-        d5.setDepartmentId("5");
+        d5.setDepartmentId(valueOf(count2++));
         ArrayList<Course> deptCourseCatalog5 = initializeCourse.initializeCourse(2);
-        ArrayList<Student> s5 = initializeStudent.intializeStudentDetails();
+        ArrayList<Student> s5 = initializeStudent.intializeStudentDetails(d5.getDepartmentId());
         for(int i=0;i<s5.size();i++)
         {   Student s1 = s5.get(i);
             d5.getDepartmentStudentDirectory().addDepartmentStudent(s1);
@@ -143,7 +151,7 @@ public class InitializeDepartment {
         {   Course course2 = deptCourseCatalog5.get(i);
             d5.getDepartmentCourseCatalog().addCourse(course2);
         }
-        
+        d5.getDepartmentCourseCatalog().setDepartmentId(d5.getDepartmentId());
         ArrayList<JobPosition> jobPosition4 = initializeTeacher(1);
        // initializeCourse.getDepartmentCourseCatalog(d5.getDepartmentCourseCatalog());
         //initializeCourse.getTeacherCatalog(teacherDirectory5);
@@ -277,6 +285,7 @@ public class InitializeDepartment {
     public DepartmentCourseSchedule initializeDepartCourseSchedule(ArrayList<Semester> semester)
     {
         DepartmentCourseSchedule dcs = new DepartmentCourseSchedule();
+        
         dcs.setSemester(semester);
         for(int i=0; i<semester.size();i++)
         {

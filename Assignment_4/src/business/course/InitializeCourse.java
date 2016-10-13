@@ -8,6 +8,7 @@ package business.course;
 import business.InitializeSemester;
 import business.Semester;
 import business.college.ClassRoom;
+import business.college.Transcript;
 import business.department.Department;
 import business.department.DepartmentCourseCatalog;
 import business.department.TeacherDirectory;
@@ -36,7 +37,7 @@ public class InitializeCourse {
     }
     public ArrayList<Course> initializeCourse(int number){
         
-        System.out.println("Count inside InitializeCourse :"+count);
+       // System.out.println("Count inside InitializeCourse :"+count);
         switch(number){
             
         case 1:
@@ -235,55 +236,58 @@ public class InitializeCourse {
         return seatAssignment;
     }
     
-    public String initializeCourseLoad(ArrayList<Semester> semester, ArrayList<SeatAssignment> seatAssignment){
+    public void initializeCourseLoad(ArrayList<Semester> semester, ArrayList<SeatAssignment> seatAssignment){
         CourseLoad courseLoad = new CourseLoad();
         courseLoad.setSemester(semester);
         courseLoad.setSeatAssignment(seatAssignment);
-        int count=0;
-//        int count1=0;
-//        int co=0;
-        //System.out.println("Seat Assignment Details "+courseLoad.getSeatAssignment().getSeatAssignment().size());
-        
-        for ( int i = 0; i< courseLoad.getSemester().size();i++){
-            //System.out.println("courseLoad.getSemester().size() -- "+courseLoad.getSemester().size());
-            ArrayList<CourseOffering> tempCourseOffering = courseLoad.getSemester().get(i).getCourseOffering();
-            //count1++;
-            for(int j = 0;j<tempCourseOffering.size();j++){
-                //System.out.println("tempCourseOffering.size()  --"+tempCourseOffering.size());
-                DepartmentCourseCatalog tempD = tempCourseOffering.get(j).getCourseList();
-               // co++;
-                for(int k =0 ; k<tempD.getCourseCatalog().size();k++){
-                    //System.out.println("tempD.getCourseCatalog().size()--"+tempD.getCourseCatalog().size());
-                    Course c = tempD.getCourseCatalog().get(k);
-                    for(int l=0;l<seatAssignment.size();l++){
-                    
-                        if(seatAssignment.get(l).getSeatAssignment().containsKey(c.getCourseId())){
-                                SeatAssignment seatAssignment1 = seatAssignment.get(l);
-                                int newCount = Integer.parseInt(seatAssignment1.seatCount.get(c.getCourseId()).toString());
-                                newCount--;
-                                seatAssignment1.setSeatAssignment(c.getCourseId(), newCount);
-                         //       System.out.println("Course Changed : Course ID:"+c.getCourseId()+
-                         //               " Count :"+newCount);
-                        }
-                    }
-                }
-            }
-        }
-        // System.out.println("Department "+tempd);
-        for (Iterator it = seatAssignment.get(1).seatCount.keySet().iterator(); it.hasNext();) {
-            String name = it.next().toString();
-            String value = seatAssignment.get(1).seatCount.get(name).toString();
-            
-            
-        //    System.out.println(name+" "+value);
-        }
+        Transcript transcript = new Transcript();
+        transcript.setCourseLoad(courseLoad);
+        //transcript.getTranscript(student);
+//        int count=0;
+////        int count1=0;
+////        int co=0;
+//        //System.out.println("Seat Assignment Details "+courseLoad.getSeatAssignment().getSeatAssignment().size());
+//        
+//        for ( int i = 0; i< courseLoad.getSemester().size();i++){
+//            //System.out.println("courseLoad.getSemester().size() -- "+courseLoad.getSemester().size());
+//            ArrayList<CourseOffering> tempCourseOffering = courseLoad.getSemester().get(i).getCourseOffering();
+//            //count1++;
+//            for(int j = 0;j<tempCourseOffering.size();j++){
+//                //System.out.println("tempCourseOffering.size()  --"+tempCourseOffering.size());
+//                DepartmentCourseCatalog tempD = tempCourseOffering.get(j).getCourseList();
+//               // co++;
+//                for(int k =0 ; k<tempD.getCourseCatalog().size();k++){
+//                    //System.out.println("tempD.getCourseCatalog().size()--"+tempD.getCourseCatalog().size());
+//                    Course c = tempD.getCourseCatalog().get(k);
+//                    for(int l=0;l<seatAssignment.size();l++){
+//                    
+//                        if(seatAssignment.get(l).getSeatAssignment().containsKey(c.getCourseId())){
+//                                SeatAssignment seatAssignment1 = seatAssignment.get(l);
+//                                int newCount = Integer.parseInt(seatAssignment1.seatCount.get(c.getCourseId()).toString());
+//                                newCount--;
+//                                seatAssignment1.setSeatAssignment(c.getCourseId(), newCount);
+//                         //       System.out.println("Course Changed : Course ID:"+c.getCourseId()+
+//                         //               " Count :"+newCount);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        // System.out.println("Department "+tempd);
+//        for (Iterator it = seatAssignment.get(1).seatCount.keySet().iterator(); it.hasNext();) {
+//            String name = it.next().toString();
+//            String value = seatAssignment.get(1).seatCount.get(name).toString();
+//            
+//            
+//        //    System.out.println(name+" "+value);
+//        }
         
         //System.out.println("Count->"+count);
        //System.out.println(""+seatAssignment.get(0).seatAssignment.);
 //        System.out.println("Seat Assignment size"+seatAssignment.size());
 //       System.out.println("Size of Courses --"+count);
         
-        return null;
+//        return null;
     }
     
 }

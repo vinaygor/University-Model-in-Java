@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class DepartmentCourseCatalog {
     
     private ArrayList<Course> courseCatalog;
+     private String departmentId;
+   
 
     public DepartmentCourseCatalog() 
     {
@@ -33,4 +35,13 @@ public class DepartmentCourseCatalog {
         courseCatalog.add(c);
         return c;
     }
+public String getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
+    }
+   
+    
 }

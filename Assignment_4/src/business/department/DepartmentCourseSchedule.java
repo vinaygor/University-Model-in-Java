@@ -17,6 +17,7 @@ public class DepartmentCourseSchedule {
     private ArrayList<CourseOffering> courseOffering;
     private ArrayList<Semester> semester;
     
+    
     public DepartmentCourseSchedule(){
         this.courseOffering = new ArrayList<CourseOffering>();
         this.semester = new ArrayList<Semester>();
@@ -38,7 +39,7 @@ public class DepartmentCourseSchedule {
         this.semester = semester;
     }
 
-
+ 
     
     
     

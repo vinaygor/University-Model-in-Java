@@ -20,13 +20,17 @@ public class Student {
     private Person studentData;
     private StudentAccount studentAccount;
     private Transcript transcript;
+    private int admissionYear; 
+    private String semesterName;
+    private String departmentId;
     
-    public Student ()
+    public Student()
     {
         this.studentData = new Person();
        // this.studentAccount = new StudentAccount();
-       // this.transcript = new Transcript();
+        this.transcript = new Transcript();
     }
+    
 
     public String getStudentId() {
         return studentId;
@@ -75,6 +79,33 @@ public class Student {
     public void setTranscript(Transcript transcript) {
         this.transcript = transcript;
     }
+
+    public int getAdmissionYear() {
+        return admissionYear;
+    }
+
+    public void setAdmissionYear(int admissionYear) {
+        this.admissionYear = admissionYear;
+    }
+
+    public String getSemesterName() {
+        return semesterName;
+    }
+
+    public void setSemesterName(String semesterName) {
+        this.semesterName = semesterName;
+    }
+
+    public String getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    
+    
     
       
 }

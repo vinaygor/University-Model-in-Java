@@ -5,7 +5,10 @@
  */
 package business.college;
 
+import business.Student.Student;
 import business.course.CourseLoad;
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
  *
@@ -17,4 +20,22 @@ public class Transcript {
     public Transcript(){
      this.courseLoad = new CourseLoad();
     }
+
+    public CourseLoad getCourseLoad() {
+        return courseLoad;
+    }
+
+    public void setCourseLoad(CourseLoad courseLoad) {
+        this.courseLoad = courseLoad;
+    }
+    
+    public void getTranscript(Student student)
+    {
+           
+        
+        Map transcript = this.courseLoad.studentCourseLoad(student.getSemesterName(),student);
+        System.out.println("Transcript Size" +transcript.size());
+        
+    }
+    
 }
